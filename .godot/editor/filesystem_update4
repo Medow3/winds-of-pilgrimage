@@ -1,5 +1,0 @@
-res://default_env.tres
-res://src/main.tscn
-res://src/player/camera.tscn
-res://src/player/player.tscn
-res://src/shaders/object_outliner.gdshader
