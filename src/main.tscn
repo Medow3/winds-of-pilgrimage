@@ -37,6 +37,7 @@ albedo_color = Color(0.341176, 0.572549, 1, 1)
 roughness = 0.08
 
 [node name="TextureRect" type="TextureRect"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
