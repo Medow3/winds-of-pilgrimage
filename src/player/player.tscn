@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://byaovh047qqy0"]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_ch8sm"]
+[ext_resource type="PackedScene" uid="uid://bd0jfjumfm745" path="res://src/player/camera.tscn" id="1_nda6q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_psheu"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_brebb"]
+radius = 0.25
+height = 1.0
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_ch8sm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_psheu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_brebb")
+
+[node name="camera_rotation_pivot_point" parent="." instance=ExtResource("1_nda6q")]

@@ -1,39 +1,81 @@
-[gd_scene load_steps=8 format=3 uid="uid://chai1ar70unnw"]
+[gd_scene load_steps=11 format=3 uid="uid://oj1reytmc2gk"]
 
-[ext_resource type="Script" path="res://src/main.gd" id="1"]
-[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="2_gxrea"]
-[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="3_0a5sd"]
-[ext_resource type="AudioStream" uid="uid://mr728b447ny0" path="res://assets/audio/sound_effects/on_player_get_new_ability.wav" id="4_wnvw7"]
+[ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="1_nqli1"]
+[ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_oiiis"]
 
-[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_jd7id"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_horii"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="Resource" id="Resource_gbu4p"]
-script = ExtResource("3_0a5sd")
-sound_file = ExtResource("4_wnvw7")
-pitch_scale = 1.0
-pitch_random = 0.2
-use_custom_sfx_volume = false
-custom_volume = 0.0
-uses_environmental_effects_bus = true
-bus_override = ""
-custom_effects_list = Array[AudioEffect]([SubResource("AudioEffectReverb_jd7id")])
-do_fade_in = true
-fade_in_trans = 1
-fade_in_ease = 0
-fade_in_duration = 0.1
-do_fade_out = true
-fade_out_trans = 1
-fade_out_ease = 0
-fade_out_duration = 0.1
-area_mask = 1
-attenuation = 1.0
-max_distance = 2000.0
-panning_strength = 1.0
+[sub_resource type="PlaneMesh" id="PlaneMesh_ung3d"]
+size = Vector2(60, 60)
 
-[sub_resource type="Resource" id="Resource_hcg4c"]
-script = ExtResource("2_gxrea")
-single_sfx = SubResource("Resource_gbu4p")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01sp"]
+albedo_color = Color(0.366917, 0.74, 0.333, 1)
 
-[node name="main" type="Node2D"]
-script = ExtResource("1")
-test_sfx = SubResource("Resource_hcg4c")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e1xtn"]
+points = PackedVector3Array(-30, 0, -30, -30, 0, 30, 30, 0, -30, 30, 0, 30)
+
+[sub_resource type="TorusMesh" id="TorusMesh_0r4gc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58eyo"]
+render_priority = 0
+shader = ExtResource("3_oiiis")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is0de"]
+next_pass = SubResource("ShaderMaterial_58eyo")
+diffuse_mode = 3
+albedo_color = Color(0.341176, 0.572549, 1, 1)
+roughness = 0.08
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_horii")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(256, 144)
+
+[node name="main" type="Node3D" parent="SubViewport"]
+
+[node name="WorldEnvironment" parent="SubViewport/main" instance=ExtResource("2_1wwoe")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/main"]
+transform = Transform3D(0.68825, -0.30794, -0.656875, 0.482246, -0.482246, 0.731354, -0.541988, -0.820129, -0.183403, 0, 0, 0)
+light_color = Color(1, 0.933333, 0.721569, 1)
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.032
+directional_shadow_max_distance = 300.0
+
+[node name="ground" type="StaticBody3D" parent="SubViewport/main"]
+
+[node name="ground_mesh" type="MeshInstance3D" parent="SubViewport/main/ground"]
+mesh = SubResource("PlaneMesh_ung3d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_a01sp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/main/ground"]
+shape = SubResource("ConvexPolygonShape3D_e1xtn")
+
+[node name="player" parent="SubViewport/main" instance=ExtResource("1_nqli1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+mesh = SubResource("TorusMesh_0r4gc")
+surface_material_override/0 = SubResource("StandardMaterial3D_is0de")
+
+[editable path="SubViewport/main/player"]
+[editable path="SubViewport/main/player/camera_rotation_pivot_point"]

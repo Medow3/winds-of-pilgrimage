@@ -1,2 +1,10 @@
+MeshInstance3D
+DirectionalLight3D
+SubViewport
+TextureRect
+CollisionShape3D
+CharacterBody3D
+Camera3D
+StaticBody3D
 Sprite2D
 Timer

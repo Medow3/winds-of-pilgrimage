@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd0jfjumfm745"]
+
+[ext_resource type="Script" path="res://src/player/camera.gd" id="1_4tluw"]
+
+[node name="camera_rotation_pivot_point" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 14)
+projection = 1
+current = true
+size = 7.0
+near = 0.01
+script = ExtResource("1_4tluw")
