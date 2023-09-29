@@ -56,6 +56,7 @@ size = Vector2i(256, 144)
 transform = Transform3D(0.68825, -0.30794, -0.656875, 0.482246, -0.482246, 0.731354, -0.541988, -0.820129, -0.183403, 0, 0, 0)
 light_color = Color(1, 0.933333, 0.721569, 1)
 shadow_enabled = true
+shadow_blur = 0.1
 directional_shadow_mode = 1
 directional_shadow_split_1 = 0.032
 directional_shadow_max_distance = 300.0
