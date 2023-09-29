@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_oiiis"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_horii"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ung3d"]
@@ -42,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_horii")
+texture = SubResource("ViewportTexture_dcpcg")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(256, 144)
