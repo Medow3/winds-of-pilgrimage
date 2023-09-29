@@ -1,0 +1,8 @@
+res://default_env.tres
+res://src/main.tscn
+res://src/main.gd
+res://src/ui/main_menu/controls_menu/controls_menu.tscn
+res://src/managers/sound_fx.tscn
+res://src/tools/sound_effect_player_2d.tscn
+res://src/managers/music.tscn
+res://src/resources/SFX/single_SFX_data.gd
