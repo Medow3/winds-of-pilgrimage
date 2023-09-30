@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://clnwrugteapw0"]
 
-[ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.fbx" id="1_ufhug"]
+[ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.glb" id="1_ufhug"]
 
 [node name="rocks" instance=ExtResource("1_ufhug")]

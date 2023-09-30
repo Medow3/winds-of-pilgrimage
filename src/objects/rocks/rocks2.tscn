@@ -3,3 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.glb" id="1_j554s"]
 
 [node name="rocks" instance=ExtResource("1_j554s")]
+
+[node name="rockform_wall_long_medium" parent="." index="107"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.1155, 0, -3.65448)
+
+[node name="rockform_wall_short1_medium" parent="." index="108"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6382, 0, 22.1822)
+
+[node name="rockform_wall_short2_medium" parent="." index="109"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4325, 0.30785, 39.0306)
