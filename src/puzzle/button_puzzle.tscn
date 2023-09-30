@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2051l2trvb1x"]
+
+[ext_resource type="MeshLibrary" uid="uid://bqoeixq8fhaqg" path="res://assets/puzzle_tiles.tres" id="1_d2u12"]
+[ext_resource type="Script" path="res://src/puzzle/button_puzzle.gd" id="2_l781n"]
+
+[node name="ButtonPuzzle" type="GridMap"]
+mesh_library = ExtResource("1_d2u12")
+cell_size = Vector3(1.5, 2, 1.5)
+script = ExtResource("2_l781n")

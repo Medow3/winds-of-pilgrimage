@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://egwqxmk4fxai"]
+
+[ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="1_wdth0"]
+[ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="2_ygspl"]
+[ext_resource type="PackedScene" uid="uid://c2051l2trvb1x" path="res://src/puzzle/button_puzzle.tscn" id="4_fsl8f"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ung3d"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01sp"]
+albedo_color = Color(0.366917, 0.74, 0.333, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e1xtn"]
+points = PackedVector3Array(-30, 0, -30, -30, 0, 30, 30, 0, -30, 30, 0, 30)
+
+[node name="TextureRect" type="TextureRect"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_dcpcg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(256, 144)
+
+[node name="main" type="Node3D" parent="SubViewport"]
+
+[node name="WorldEnvironment" parent="SubViewport/main" instance=ExtResource("1_wdth0")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/main"]
+transform = Transform3D(0.68825, -0.30794, -0.656875, 0.482246, -0.482246, 0.731354, -0.541988, -0.820129, -0.183403, 0, 0, 0)
+light_color = Color(1, 0.933333, 0.721569, 1)
+shadow_enabled = true
+shadow_blur = 0.1
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.032
+directional_shadow_max_distance = 300.0
+
+[node name="ground" type="StaticBody3D" parent="SubViewport/main"]
+
+[node name="ground_mesh" type="MeshInstance3D" parent="SubViewport/main/ground"]
+mesh = SubResource("PlaneMesh_ung3d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_a01sp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/main/ground"]
+shape = SubResource("ConvexPolygonShape3D_e1xtn")
+
+[node name="player" parent="SubViewport/main" instance=ExtResource("2_ygspl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
+
+[node name="ButtonPuzzle" parent="SubViewport/main" instance=ExtResource("4_fsl8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45, 0)
+data = {
+"cells": PackedInt32Array(1, 0, 0, 1, 65533, 3, 1, 65535, 0, 1, 65534, 0, 2, 0, 3)
+}
+
+[editable path="SubViewport/main/player"]
+[editable path="SubViewport/main/player/camera_rotation_pivot_point"]

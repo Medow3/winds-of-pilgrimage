@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkhhfhmoghnbh"]
+
+[ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_dqs7k"]
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_w2v1q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+render_priority = 0
+shader = ExtResource("2_w2v1q")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq4gr"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0, 0.894118, 0.678431, 1)
+roughness = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wcvu"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0, 0.447059, 0.282353, 1)
+roughness = 0.08
+
+[node name="TButton" instance=ExtResource("1_dqs7k")]
+surface_material_override/0 = SubResource("StandardMaterial3D_lq4gr")
+pressed_texture = SubResource("StandardMaterial3D_2wcvu")
+released_texture = SubResource("StandardMaterial3D_lq4gr")

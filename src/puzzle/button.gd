@@ -1,4 +1,4 @@
-extends MeshInstance3D
+class_name GameButton extends MeshInstance3D
 
 @export var is_pressed = false : set = _set_is_pressed
 @export var is_disabled = false : set = _set_is_disabled
@@ -21,7 +21,8 @@ func _set_is_disabled(val: bool):
 	_set_texture()
 
 func _set_texture():
-	if disabled and disabled_texture != null:
+
+	if is_disabled and disabled_texture != null:
 		set_surface_override_material(0, disabled_texture)
 	elif is_pressed:
 		if pressed_texture != null:
@@ -29,12 +30,14 @@ func _set_texture():
 	elif released_texture != null:
 		set_surface_override_material(0, released_texture)
 
+func _ready():
+	is_pressed = is_pressed
 
 func _on_trigger_body_entered(body):
 	if body is Player:
 		if is_disabled:
 			return
-			
+		
 		is_pressed = !is_pressed
 
 		if disable_on_toggle:

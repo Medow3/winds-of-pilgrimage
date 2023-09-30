@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqp55g70ile1n"]
+
+[ext_resource type="PackedScene" uid="uid://68t34ysh4uj1" path="res://src/puzzle/button.tscn" id="1_4dc01"]
+[ext_resource type="Script" path="res://src/puzzle/tiles/puzzle_button.gd" id="2_wvvrc"]
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_yyb5i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+render_priority = 0
+shader = ExtResource("3_yyb5i")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8vr4"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0, 0.305882, 0.862745, 1)
+roughness = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhhwy"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0.533333, 0.698039, 1, 1)
+roughness = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
+render_priority = 0
+shader = ExtResource("3_yyb5i")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgl77"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(0.431373, 0.4, 0.356863, 1)
+roughness = 0.08
+
+[node name="PuzzleButton" instance=ExtResource("1_4dc01")]
+script = ExtResource("2_wvvrc")
+pressed_texture = SubResource("StandardMaterial3D_q8vr4")
+released_texture = SubResource("StandardMaterial3D_dhhwy")
+disabled_texture = SubResource("StandardMaterial3D_jgl77")

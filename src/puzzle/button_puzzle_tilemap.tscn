@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd63ttbcihkxo"]
+
+[ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_ckokf"]
+[ext_resource type="PackedScene" uid="uid://clinn5hb5k2rh" path="res://src/puzzle/tiles/on_button.tscn" id="2_8jync"]
+[ext_resource type="PackedScene" uid="uid://dxkqmyv5qt5e4" path="res://src/puzzle/tiles/off_button.tscn" id="3_3xib5"]
+[ext_resource type="PackedScene" uid="uid://ctobnyvw0o27p" path="res://src/puzzle/tiles/connect_button.tscn" id="4_cqn6r"]
+[ext_resource type="PackedScene" uid="uid://dkhhfhmoghnbh" path="res://src/puzzle/tiles/t_button.tscn" id="6_ob41u"]
+[ext_resource type="PackedScene" uid="uid://dmsbwkhriomua" path="res://src/puzzle/tiles/x_button.tscn" id="7_vfgcs"]
+[ext_resource type="PackedScene" uid="uid://drf75uj37pbw" path="res://src/puzzle/tiles/r_button.tscn" id="8_3puhf"]
+[ext_resource type="PackedScene" uid="uid://dagpp8nwijowe" path="res://src/puzzle/tiles/v_button.tscn" id="9_24mtw"]
+
+[node name="button_puzzle_tilemap" type="Node3D"]
+
+[node name="PuzzleButton" parent="." instance=ExtResource("1_ckokf")]
+
+[node name="OnButton" parent="." instance=ExtResource("2_8jync")]
+
+[node name="OffButton" parent="." instance=ExtResource("3_3xib5")]
+
+[node name="ConnectButton" parent="." instance=ExtResource("4_cqn6r")]
+
+[node name="TButton" parent="." instance=ExtResource("6_ob41u")]
+
+[node name="XButton" parent="." instance=ExtResource("7_vfgcs")]
+
+[node name="RButton" parent="." instance=ExtResource("8_3puhf")]
+
+[node name="VButton" parent="." instance=ExtResource("9_24mtw")]

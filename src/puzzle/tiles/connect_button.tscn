@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctobnyvw0o27p"]
+
+[ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_iman8"]
+[ext_resource type="Script" path="res://src/puzzle/tiles/connect_button.gd" id="2_k6aip"]
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_vn3qr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+render_priority = 0
+shader = ExtResource("3_vn3qr")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6knnw"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0.8, 0.796078, 0.568627, 1)
+roughness = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxx3"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0.47451, 0.576471, 0, 1)
+roughness = 0.08
+
+[node name="ConnectButton" instance=ExtResource("1_iman8")]
+surface_material_override/0 = SubResource("StandardMaterial3D_6knnw")
+script = ExtResource("2_k6aip")
+pressed_texture = SubResource("StandardMaterial3D_daxx3")
+released_texture = SubResource("StandardMaterial3D_6knnw")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://68t34ysh4uj1"]
+[gd_scene load_steps=11 format=3 uid="uid://68t34ysh4uj1"]
 
 [ext_resource type="Script" path="res://src/puzzle/button.gd" id="1_j7oep"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="1_xacf2"]
@@ -17,7 +17,7 @@ shader_parameter/highlight_strength = 0.1
 shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg2j2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qvkq"]
 next_pass = SubResource("ShaderMaterial_xu6n6")
 diffuse_mode = 3
 albedo_color = Color(0.533333, 0.698039, 1, 1)
@@ -29,18 +29,37 @@ diffuse_mode = 3
 albedo_color = Color(0, 0.305882, 0.862745, 1)
 roughness = 0.08
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
+render_priority = 0
+shader = ExtResource("1_xacf2")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjecy"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(0.431373, 0.4, 0.356863, 1)
+roughness = 0.08
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhcfs"]
 size = Vector3(0.9, 1, 0.9)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gl8ta"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_33sij"]
 
-[node name="Game Button" type="MeshInstance3D"]
+[node name="GameButton" type="MeshInstance3D"]
 mesh = SubResource("BoxMesh_1ppov")
 skeleton = NodePath("../Shape")
-surface_material_override/0 = SubResource("StandardMaterial3D_pg2j2")
+surface_material_override/0 = SubResource("StandardMaterial3D_2qvkq")
 script = ExtResource("1_j7oep")
-pressed_texture = SubResource("StandardMaterial3D_pg2j2")
-released_texture = SubResource("StandardMaterial3D_dp84d")
+pressed_texture = SubResource("StandardMaterial3D_dp84d")
+released_texture = SubResource("StandardMaterial3D_2qvkq")
+disabled_texture = SubResource("StandardMaterial3D_vjecy")
 
 [node name="Trigger" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0041337, 0)
@@ -56,7 +75,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Shape" type="CollisionShape3D" parent="Collider"]
-shape = SubResource("BoxShape3D_gl8ta")
+shape = SubResource("BoxShape3D_33sij")
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
