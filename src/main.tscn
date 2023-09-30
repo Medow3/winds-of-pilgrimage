@@ -1,8 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://oj1reytmc2gk"]
+[gd_scene load_steps=23 format=3 uid="uid://oj1reytmc2gk"]
 
 [ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="1_nqli1"]
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_oiiis"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_ha16s"]
+[ext_resource type="Resource" path="res://src/world/terrain_data/data.hterrain" id="5_tuqya"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_c0tgl"]
+[ext_resource type="Shader" path="res://src/shaders/water.gdshader" id="7_432t3"]
+[ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.fbx" id="8_e1t7e"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
 viewport_path = NodePath("SubViewport")
@@ -11,7 +16,7 @@ viewport_path = NodePath("SubViewport")
 size = Vector2(60, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01sp"]
-albedo_color = Color(0.366917, 0.74, 0.333, 1)
+albedo_color = Color(0.368627, 0.741176, 0.333333, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e1xtn"]
 points = PackedVector3Array(-30, 0, -30, -30, 0, 30, 30, 0, -30, 30, 0, 30)
@@ -19,6 +24,7 @@ points = PackedVector3Array(-30, 0, -30, -30, 0, 30, 30, 0, -30, 30, 0, 30)
 [sub_resource type="TorusMesh" id="TorusMesh_0r4gc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_58eyo"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_oiiis")
 shader_parameter/enabled = true
@@ -35,6 +41,43 @@ next_pass = SubResource("ShaderMaterial_58eyo")
 diffuse_mode = 3
 albedo_color = Color(0.341176, 0.572549, 1, 1)
 roughness = 0.08
+
+[sub_resource type="Resource" id="Resource_erj2p"]
+script = ExtResource("6_c0tgl")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0gabx"]
+size = Vector2(300, 300)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xekwr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tv7v5"]
+noise = SubResource("FastNoiseLite_xekwr")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6j0hv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cktxx"]
+noise = SubResource("FastNoiseLite_6j0hv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nipwf"]
+render_priority = 0
+shader = ExtResource("7_432t3")
+shader_parameter/beer_factor = 0.8
+shader_parameter/foam_distance = 0.01
+shader_parameter/foam_max_distance = 0.01
+shader_parameter/foam_min_distance = -1.0
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/surface_noise_tiling = Vector2(1, 4)
+shader_parameter/surface_noise_scroll = Vector3(0.03, 0.03, 0)
+shader_parameter/surface_noise_cutoff = 0.777
+shader_parameter/surface_distortion_amount = 0.27
+shader_parameter/_DepthGradientShallow = Color(0.325, 0.807, 0.971, 0.725)
+shader_parameter/_DepthGradientDeep = Color(0.086, 0.407, 1, 0.749)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/_DepthFactor = 1.0
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_cktxx")
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_tv7v5")
 
 [node name="TextureRect" type="TextureRect"]
 texture_filter = 1
@@ -62,6 +105,7 @@ directional_shadow_split_1 = 0.032
 directional_shadow_max_distance = 300.0
 
 [node name="ground" type="StaticBody3D" parent="SubViewport/main"]
+visible = false
 
 [node name="ground_mesh" type="MeshInstance3D" parent="SubViewport/main/ground"]
 mesh = SubResource("PlaneMesh_ung3d")
@@ -78,6 +122,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 mesh = SubResource("TorusMesh_0r4gc")
 surface_material_override/0 = SubResource("StandardMaterial3D_is0de")
+
+[node name="HTerrain" type="Node3D" parent="SubViewport/main"]
+script = ExtResource("4_ha16s")
+centered = true
+_terrain_data = ExtResource("5_tuqya")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_erj2p")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="water" type="MeshInstance3D" parent="SubViewport/main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 0)
+mesh = SubResource("PlaneMesh_0gabx")
+surface_material_override/0 = SubResource("ShaderMaterial_nipwf")
+
+[node name="rocks" parent="." instance=ExtResource("8_e1t7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50832, 0, -35.2069)
 
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]

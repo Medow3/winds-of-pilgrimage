@@ -1,7 +1,8 @@
 res://default_env.tres
 res://src/main.tscn
-res://src/player/camera.tscn
-res://src/player/player.tscn
 res://src/shaders/object_outliner.gdshader
-res://src/player/camera.gd
-res://src/managers/music.tscn
+res://src/world/terrain_data/height.res
+res://src/world/terrain_data/data.hterrain
+res://src/shaders/water.gdshader
+res://src/shaders/object_outliner.tres
+res://src/objects/rocks/rocks.tscn

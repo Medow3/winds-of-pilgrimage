@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=3 uid="uid://clnwrugteapw0"]
+
+[ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.fbx" id="1_ufhug"]
+[ext_resource type="Material" uid="uid://8m2ei0g2rku3" path="res://src/shaders/object_outliner.tres" id="2_ias1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2lss"]
+next_pass = ExtResource("2_ias1t")
+
+[node name="rocks" instance=ExtResource("1_ufhug")]
+
+[node name="pebbles1_dirt_medium" parent="RootNode" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles2_dirt_medium" parent="RootNode" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles3_dirt_medium" parent="RootNode" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles4_dirt_medium" parent="RootNode" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles1_caves_medium" parent="RootNode" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles2_caves_medium" parent="RootNode" index="17"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles3_caves_medium" parent="RootNode" index="20"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="pebbles4_caves_medium" parent="RootNode" index="23"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock1_natural_medium" parent="RootNode" index="44"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock2_natural_medium" parent="RootNode" index="45"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock5_natural_medium" parent="RootNode" index="46"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock6_natural_medium" parent="RootNode" index="47"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock4_natural_medium" parent="RootNode" index="48"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock7_natural_medium" parent="RootNode" index="49"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock8_natural_medium" parent="RootNode" index="50"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock9_natural_medium" parent="RootNode" index="51"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock10_natural_medium" parent="RootNode" index="52"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock3_natural_medium" parent="RootNode" index="53"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock1_cave_medium" parent="RootNode" index="74"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock2_cave_medium" parent="RootNode" index="75"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock5_cave_medium" parent="RootNode" index="76"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock6_cave_medium" parent="RootNode" index="77"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock4_cave_medium" parent="RootNode" index="78"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock7_cave_medium" parent="RootNode" index="79"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock8_cave_medium" parent="RootNode" index="80"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock9_cave_medium" parent="RootNode" index="81"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock10_cave_medium" parent="RootNode" index="82"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rock3_cave_medium" parent="RootNode" index="83"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockwall_corner_medium" parent="RootNode" index="86"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockwall_straight_medium" parent="RootNode" index="87"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="debris1_medium" parent="RootNode" index="92"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="debris2_medium" parent="RootNode" index="93"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_arch_medium" parent="RootNode" index="103"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_corner_hard_medium" parent="RootNode" index="104"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_corner_soft_medium" parent="RootNode" index="105"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_column_medium" parent="RootNode" index="106"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_wall_long_medium" parent="RootNode" index="107"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_wall_short1_medium" parent="RootNode" index="108"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
+
+[node name="rockform_wall_short2_medium" parent="RootNode" index="109"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c2lss")
