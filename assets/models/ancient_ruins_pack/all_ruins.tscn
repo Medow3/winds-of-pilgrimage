@@ -5,7 +5,103 @@
 [node name="scene" instance=ExtResource("1_ib553")]
 
 [node name="Bricks1_Estructura1_0" parent="Sketchfab_model/RuinsPack_fbx/RootNode/Bricks1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 7.7647e-23, 0, 7.86658e-23, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -7.86658e-23, 0, 7.86658e-23, 1, 0, 0, 0)
+
+[node name="Pillar1" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="1"]
+transform = Transform3D(7.54979e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, -7.54979e-06, -3.30012e-13, 647.749, 0, -500)
 
 [node name="Pillar1_Material_001_0" parent="Sketchfab_model/RuinsPack_fbx/RootNode/Pillar1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 7.7647e-23, 0, 7.86658e-23, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -7.86658e-23, 0, 7.86658e-23, 1, 0, 0, 0)
+
+[node name="Walls1" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="2"]
+transform = Transform3D(7.54979e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, -7.54979e-06, -3.30012e-13, 647.749, 0, -500)
+
+[node name="Bricks2" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="3"]
+transform = Transform3D(7.54979e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, -7.54979e-06, -3.30012e-13, 660.921, 90.6746, -17.3844)
+
+[node name="Pillar2" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="4"]
+transform = Transform3D(8.71557, 99.6195, 4.35451e-06, 0, -4.37114e-06, 100, 99.6195, -8.71557, -3.8097e-07, 647.747, 125.171, -0.00839821)
+
+[node name="Wall2" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="5"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 647.695, 100, -0.307167)
+
+[node name="Bricks3" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="6"]
+transform = Transform3D(99.209, -12.5525, -4.59968e-07, -0.382377, -3.02213, 99.9536, -12.5467, -99.163, -3.04623, 503.863, 78.9054, 435.98)
+
+[node name="Pillar3" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="7"]
+transform = Transform3D(81.9152, 57.3577, 2.50718e-06, 0, -4.37114e-06, 100, 57.3577, -81.9152, -3.58063e-06, 443.167, 97.6883, 366.687)
+
+[node name="Walls3" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="8"]
+transform = Transform3D(4.33126e-05, -100, -4.37114e-06, 0, -4.37114e-06, 100, -100, -4.33126e-05, -1.89325e-12, 565.701, 90.1359, 510.438)
+
+[node name="Pillar4" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="9"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 147.749, 0, -500)
+
+[node name="Bricks5" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="10"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 147.749, 0, 0)
+
+[node name="Pillar5" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="11"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 147.749, 0, -500)
+
+[node name="Wall5" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="12"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 147.749, 0, 0)
+
+[node name="Bricks6" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="13"]
+transform = Transform3D(-99.209, 12.5525, -1.60099e-06, -0.38238, -3.02213, 99.9536, 12.5467, 99.163, 3.04623, 68.4156, 100.469, 481.53)
+
+[node name="Pillar6" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="14"]
+transform = Transform3D(-81.9152, -57.3577, -2.50718e-06, 0, -4.37114e-06, 100, -57.3577, 81.9152, 3.58063e-06, 41.2841, 147.417, 513.759)
+
+[node name="Walls6" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="15"]
+transform = Transform3D(7.54979e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, -7.54979e-06, -3.30012e-13, 51.7203, 100, 459.409)
+
+[node name="Bricks7" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="16"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, -500)
+
+[node name="Pilar7" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="17"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, -500)
+
+[node name="Wall7" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="18"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, -500)
+
+[node name="Bricks8" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="19"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, 0)
+
+[node name="Pillar8" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="20"]
+transform = Transform3D(8.71557, 99.6195, 4.35451e-06, 0, -4.37114e-06, 100, 99.6195, -8.71557, -3.8097e-07, -352.251, 0, 0)
+
+[node name="Wall8" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="21"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, 0)
+
+[node name="Bricks9" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="22"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, 0)
+
+[node name="Pillar9" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="23"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, -149.273, 549.538)
+
+[node name="Wall9" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="24"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -352.251, 0, 460)
+
+[node name="Bricks10" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="25"]
+transform = Transform3D(12.5467, 99.163, 3.04662, -0.382403, -3.02253, 99.9536, 99.209, -12.5525, -2.44666e-05, -687.464, 34.9535, -493.503)
+
+[node name="Pillar10" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="26"]
+transform = Transform3D(-57.3576, 81.9152, 3.58063e-06, 0, -4.37114e-06, 100, 81.9152, 57.3576, 2.50718e-06, -662.251, 0, -500)
+
+[node name="Walls10" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="27"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -662.251, 0, -500)
+
+[node name="Bricks11" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="28"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -922.251, 0, -360)
+
+[node name="Walls11" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="29"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -922.251, 0, 100)
+
+[node name="Bricks12" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="30"]
+transform = Transform3D(12.5467, 99.163, 3.04662, -0.382403, -3.02253, 99.9536, 99.209, -12.5525, -2.44666e-05, -687.464, 34.9535, -193.503)
+
+[node name="Pillars12" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="31"]
+transform = Transform3D(-57.3576, 81.9152, 3.58063e-06, 0, -4.37114e-06, 100, 81.9152, 57.3576, 2.50718e-06, -662.251, 0, -200)
+
+[node name="Walls12" parent="Sketchfab_model/RuinsPack_fbx/RootNode" index="32"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -662.251, 0, -200)

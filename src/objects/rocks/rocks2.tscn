@@ -8,13 +8,13 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 72.5908)
 
 [node name="pebbles2_dirt_light" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8659, 0, 81.1641)
 
 [node name="pebbles3_dirt_light" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9014, 0, 84.3874)
 
 [node name="pebbles4_dirt_light" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9347, 0, 82.3698)
 
 [node name="pebbles1_dirt_dark" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -127.508)
@@ -28,29 +28,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 [node name="pebbles4_dirt_dark" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
+[node name="pebbles1_dirt_medium" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 14.699)
+
+[node name="pebbles2_dirt_medium" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
+[node name="pebbles3_dirt_medium" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
+[node name="pebbles4_dirt_medium" parent="." index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
 [node name="pebbles1_caves_light" parent="." index="12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9185, 0, 110.911)
 
 [node name="pebbles1_caves_dark" parent="." index="13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
+[node name="pebbles1_caves_medium" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
 [node name="pebbles2_caves_light" parent="." index="15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1713, 0, 111.2)
 
 [node name="pebbles2_caves_dark" parent="." index="16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
+[node name="pebbles2_caves_medium" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
 [node name="pebbles3_caves_light" parent="." index="18"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.375, 0, 107.507)
 
 [node name="pebbles3_caves_dark" parent="." index="19"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
+[node name="pebbles3_caves_medium" parent="." index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
+
 [node name="pebbles4_caves_light" parent="." index="21"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2489, 0, 109.362)
 
 [node name="pebbles4_caves_dark" parent="." index="22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
+
+[node name="pebbles4_caves_medium" parent="." index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.559, 0, 34.6907)
 
 [node name="rock1_natural_light" parent="." index="24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 122.189)
@@ -112,35 +136,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70.4536)
 [node name="rock3_natural_dark" parent="." index="43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77017, 0, -104.389)
 
+[node name="rock1_natural_medium" parent="." index="44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.37, 0, 21.1958)
+
+[node name="rock5_natural_medium" parent="." index="46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.203, 0, 9.16995)
+
+[node name="rock6_natural_medium" parent="." index="47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.092, -28.1962, 32.58)
+
+[node name="rock4_natural_medium" parent="." index="48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.323, 0, 7.18307)
+
+[node name="rock8_natural_medium" parent="." index="50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.209, 0, 20.8237)
+
+[node name="rock9_natural_medium" parent="." index="51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.79, -12.7973, 33.9841)
+
 [node name="rock1_cave_light" parent="." index="54"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0818, 0, 100.224)
 
 [node name="rock2_cave_light" parent="." index="55"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9955, 0, 95.7087)
 
 [node name="rock5_cave_light" parent="." index="56"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2619, 9.53674e-07, 91.9346)
 
 [node name="rock6_cave_light" parent="." index="57"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1984, 9.53674e-07, 102.387)
 
 [node name="rock4_cave_light" parent="." index="58"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50392, -9.53674e-07, 100.805)
 
 [node name="rock7_cave_light" parent="." index="59"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1053, 0, 105.354)
 
 [node name="rock8_cave_light" parent="." index="60"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4156, 0, 91.4373)
 
 [node name="rock9_cave_light" parent="." index="61"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1287, 0, 90.9443)
 
 [node name="rock10_cave_light" parent="." index="62"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9374, 9.53674e-07, 107.284)
 
 [node name="rock3_cave_light" parent="." index="63"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91986, -5.13362, 80.2746)
 
 [node name="rock1_cave_dark" parent="." index="64"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
@@ -172,11 +214,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 [node name="rock3_cave_dark" parent="." index="73"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
+[node name="rock1_cave_medium" parent="." index="74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.968, 0, 29.6306)
+
+[node name="rock2_cave_medium" parent="." index="75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.957, 0, 49.2898)
+
+[node name="rock5_cave_medium" parent="." index="76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.087, 0, 42.2917)
+
+[node name="rock6_cave_medium" parent="." index="77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.574, 0, 37.0799)
+
+[node name="rock4_cave_medium" parent="." index="78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.475, 0, 52.7001)
+
+[node name="rock7_cave_medium" parent="." index="79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.566, 0, 38.3226)
+
+[node name="rock8_cave_medium" parent="." index="80"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.071, 0, 30.6763)
+
+[node name="rock9_cave_medium" parent="." index="81"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.22, 0, 35.5233)
+
+[node name="rock10_cave_medium" parent="." index="82"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.998, 0, 49.3895)
+
+[node name="rock3_cave_medium" parent="." index="83"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.883, 0, 40.9961)
+
 [node name="rockwall_corner_light" parent="." index="84"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8216, 9.53674e-07, 91.4444)
 
 [node name="rockwall_straight_light" parent="." index="85"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3619, -9.53674e-07, 94.9488)
+
+[node name="rockwall_corner_medium" parent="." index="86"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.093, 0, 23.357)
+
+[node name="rockwall_straight_medium" parent="." index="87"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.237, 0, 41.8124)
 
 [node name="rockwall_corner_dark" parent="." index="88"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
@@ -185,10 +263,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
 
 [node name="debris1_light" parent="." index="90"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5276, 0, 103.9)
 
 [node name="debris2_light" parent="." index="91"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2043, 0, 97.2784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3974, -9.53674e-07, 101.416)
+
+[node name="debris1_medium" parent="." index="92"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.757, 0, 26.6416)
+
+[node name="debris2_medium" parent="." index="93"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.962, 0, 28.042)
 
 [node name="debris1_dark" parent="." index="94"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95.3641)
