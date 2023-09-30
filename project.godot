@@ -110,7 +110,6 @@ Jump={
 
 [physics]
 
-3d/default_gravity=14.7
 common/enable_pause_aware_picking=true
 
 [rendering]

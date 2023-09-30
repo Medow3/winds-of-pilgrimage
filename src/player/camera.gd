@@ -13,7 +13,7 @@ class_name PlayerCamera extends Camera3D
 @onready var rotation_tween: Tween = create_tween()
 @onready var rotation_speed_modifier_tween: Tween = create_tween()
 
-const TRANSPARENT_ALPHA: float = 0.4
+const TRANSPARENT_ALPHA: float = 0.2
 
 var last_rotation_direction: float = 1.0
 var current_rotation_speed_modifier: float = 1.0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2wqx8rcf8y2i"]
+
+[ext_resource type="PackedScene" uid="uid://dphq20e46gr5s" path="res://assets/models/ancient_ruins_pack/scene.gltf" id="1_ib553"]
+
+[node name="scene" instance=ExtResource("1_ib553")]
+
+[node name="Bricks1_Estructura1_0" parent="Sketchfab_model/RuinsPack_fbx/RootNode/Bricks1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.7647e-23, 0, 7.86658e-23, 1, 0, 0, 0)
+
+[node name="Pillar1_Material_001_0" parent="Sketchfab_model/RuinsPack_fbx/RootNode/Pillar1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.7647e-23, 0, 7.86658e-23, 1, 0, 0, 0)

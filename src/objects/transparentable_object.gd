@@ -1,13 +1,14 @@
 class_name TransparentableObject extends StaticBody3D
 
-@onready var mesh_instance: MeshInstance3D = $MeshInstance3D
+@export var mesh_instance: MeshInstance3D
 
 var materials: Array[StandardMaterial3D]
 
 func _ready() -> void:
 	materials = []
-	for i in mesh_instance.get_surface_override_material_count():
-		materials.append(mesh_instance.get_surface_override_material(i))
+	materials.append(mesh_instance.mesh.get("surface_0/material"))
+#	for i in mesh_instance.mesh.get("surface_0/material").get_surface_override_material_count():
+#		materials.append(mesh_instance.mesh.get("surface_0/material").get_surface_override_material(i))
 
 
 func set_transparentcy(alpha: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://oj1reytmc2gk"]
+[gd_scene load_steps=28 format=3 uid="uid://oj1reytmc2gk"]
 
 [ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="1_nqli1"]
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
@@ -7,22 +7,18 @@
 [ext_resource type="Resource" path="res://src/world/terrain_data/data.hterrain" id="5_tuqya"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_c0tgl"]
 [ext_resource type="Shader" path="res://src/shaders/water.gdshader" id="7_432t3"]
-[ext_resource type="PackedScene" uid="uid://dve104mjte6dm" path="res://assets/models/Rocks/rocks.glb" id="10_08ehy"]
 [ext_resource type="PackedScene" uid="uid://c6pq0f742lv2n" path="res://src/objects/static_bodies/rock_wall_1.tscn" id="10_k4eh8"]
+[ext_resource type="PackedScene" uid="uid://d0ympogowsx7t" path="res://src/objects/static_bodies/dark_rock_wall_long.tscn" id="11_7mdi8"]
 [ext_resource type="PackedScene" uid="uid://dnjpo7ialjhvt" path="res://src/objects/static_bodies/rock_wall_2.tscn" id="11_gocj7"]
+[ext_resource type="PackedScene" uid="uid://dff4ecxfyvjon" path="res://src/objects/static_bodies/dark_rock_wall_small.tscn" id="12_jfq4b"]
 [ext_resource type="PackedScene" uid="uid://cu78v624caffm" path="res://src/objects/static_bodies/rock_wall_3.tscn" id="12_xmg7k"]
+[ext_resource type="PackedScene" uid="uid://dxqfje0i0y24i" path="res://src/objects/static_bodies/dark_rock_wall_2_small.tscn" id="13_dmg1q"]
+[ext_resource type="PackedScene" uid="uid://cf5xvsfmwpb4t" path="res://src/objects/static_bodies/dark_rock_wall_corner_long.tscn" id="14_quh7i"]
+[ext_resource type="PackedScene" uid="uid://d2wqx8rcf8y2i" path="res://assets/models/ancient_ruins_pack/all_ruins.tscn" id="15_vyot8"]
+[ext_resource type="PackedScene" uid="uid://b416q7rvyirud" path="res://src/objects/ruins/ruin_1_pillar.tscn" id="16_527og"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
 viewport_path = NodePath("SubViewport")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ung3d"]
-size = Vector2(60, 60)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01sp"]
-albedo_color = Color(0.368627, 0.741176, 0.333333, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e1xtn"]
-points = PackedVector3Array(-30, 0, -30, -30, 0, 30, 30, 0, -30, 30, 0, 30)
 
 [sub_resource type="TorusMesh" id="TorusMesh_0r4gc"]
 
@@ -103,17 +99,6 @@ directional_shadow_mode = 1
 directional_shadow_split_1 = 0.032
 directional_shadow_max_distance = 300.0
 
-[node name="ground" type="StaticBody3D" parent="SubViewport/main"]
-visible = false
-
-[node name="ground_mesh" type="MeshInstance3D" parent="SubViewport/main/ground"]
-mesh = SubResource("PlaneMesh_ung3d")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_a01sp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/main/ground"]
-shape = SubResource("ConvexPolygonShape3D_e1xtn")
-
 [node name="player" parent="SubViewport/main" instance=ExtResource("1_nqli1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
 
@@ -153,85 +138,117 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.76, 0)
 mesh = SubResource("PlaneMesh_0gabx")
 surface_material_override/0 = SubResource("ShaderMaterial_nipwf")
 
-[node name="rocks" parent="." instance=ExtResource("10_08ehy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50832, 0, -35.2069)
-visible = false
+[node name="left_cliffs" type="Node3D" parent="SubViewport/main"]
 
-[node name="rocks2" parent="." instance=ExtResource("10_08ehy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.21, 6.17504e-05, 2.22181)
-visible = false
+[node name="dark_rock_wall_long" parent="SubViewport/main/left_cliffs" instance=ExtResource("11_7mdi8")]
+transform = Transform3D(0.0150347, 0, 0.229508, 0, 0.23, 0, -0.229508, 0, 0.0150347, -18.1855, -4.76837e-07, -17.8361)
 
-[node name="rock_wall_1" parent="." instance=ExtResource("10_k4eh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)
+[node name="dark_rock_wall_long2" parent="SubViewport/main/left_cliffs" instance=ExtResource("11_7mdi8")]
+transform = Transform3D(0.201077, 0, 0.111661, 0, 0.23, 0, -0.111661, 0, 0.201077, -27.1772, -1.43051e-06, 19.3391)
 
-[node name="rock_wall_2" parent="." instance=ExtResource("11_gocj7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938779, 0, -7.22332)
+[node name="dark_rock_wall_long3" parent="SubViewport/main/left_cliffs" instance=ExtResource("11_7mdi8")]
+transform = Transform3D(-0.227544, 0, -0.0335236, 0, 0.23, 0, 0.0335236, 0, -0.227544, -35.5725, 0, 21.8085)
 
-[node name="rock_wall_long_1" parent="." instance=ExtResource("12_xmg7k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7)
+[node name="dark_rock_wall_small" parent="SubViewport/main/left_cliffs" instance=ExtResource("12_jfq4b")]
+transform = Transform3D(0.154112, 0, 0.170732, 0, 0.23, 0, -0.170732, 0, 0.154112, -24.7731, -4.76837e-07, -2.10057)
 
-[node name="river_rocks" type="Node3D" parent="."]
+[node name="dark_rock_wall_small4" parent="SubViewport/main/left_cliffs" instance=ExtResource("12_jfq4b")]
+transform = Transform3D(0.222945, 0, 0.0565296, 0, 0.23, 0, -0.0565296, 0, 0.222945, -41.7693, -4.76837e-07, 23.392)
 
-[node name="near_side" type="Node3D" parent="river_rocks"]
+[node name="dark_rock_wall_small5" parent="SubViewport/main/left_cliffs" instance=ExtResource("12_jfq4b")]
+transform = Transform3D(0.455696, 0, 0.0627791, 0, 0.46, 0, -0.0627791, 0, 0.455696, -47.7436, -3.81737, 23.5393)
 
-[node name="rock_wall_5" parent="river_rocks/near_side" instance=ExtResource("10_k4eh8")]
+[node name="dark_rock_wall_small3" parent="SubViewport/main/left_cliffs" instance=ExtResource("12_jfq4b")]
+transform = Transform3D(0.127955, 0, 0.191122, 0, 0.23, 0, -0.191122, 0, 0.127955, -22.1659, -4.76837e-07, 15.6958)
+
+[node name="dark_rock_wall_small2" parent="SubViewport/main/left_cliffs" instance=ExtResource("12_jfq4b")]
+transform = Transform3D(-0.0548627, 0, -0.223361, 0, 0.23, 0, 0.223361, 0, -0.0548627, -26.927, -4.76837e-07, 0.121815)
+
+[node name="dark_rock_wall_2_small" parent="SubViewport/main/left_cliffs" instance=ExtResource("13_dmg1q")]
+transform = Transform3D(0.0363328, 0, 0.227112, 0, 0.23, 0, -0.227112, 0, 0.0363328, -19.0269, 0, -12.0257)
+
+[node name="dark_rock_wall_corner_long" parent="SubViewport/main/left_cliffs" instance=ExtResource("14_quh7i")]
+transform = Transform3D(0.225447, 0, 0.045536, 0, 0.23, 0, -0.045536, 0, 0.225447, -21.6585, 0.0193315, -7.10924)
+
+[node name="dark_rock_wall_corner_long3" parent="SubViewport/main/left_cliffs" instance=ExtResource("14_quh7i")]
+transform = Transform3D(-0.0540827, 0, 0.223551, 0, 0.23, 0, -0.223551, 0, -0.0540827, -25.0217, 0.0193324, 5.23998)
+
+[node name="dark_rock_wall_corner_long4" parent="SubViewport/main/left_cliffs" instance=ExtResource("14_quh7i")]
+transform = Transform3D(0.146552, 0, 0.177264, 0, 0.23, 0, -0.177264, 0, 0.146552, -21.6432, 0.0193324, 10.2293)
+
+[node name="dark_rock_wall_corner_long2" parent="SubViewport/main/left_cliffs" instance=ExtResource("14_quh7i")]
+transform = Transform3D(0.0277988, 0, 0.228314, 0, 0.23, 0, -0.228314, 0, 0.0277988, -20.3698, 0.019331, -24.7519)
+
+[node name="river_rocks" type="Node3D" parent="SubViewport/main"]
+
+[node name="near_side" type="Node3D" parent="SubViewport/main/river_rocks"]
+
+[node name="rock_wall_5" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("10_k4eh8")]
 transform = Transform3D(-1.10679, 0, -1.7077, 0, 2.035, 0, 1.7077, 0, -1.10679, 16.483, -6.13707, -8.87346)
 
-[node name="rock_wall_6" parent="river_rocks/near_side" instance=ExtResource("10_k4eh8")]
+[node name="rock_wall_6" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("10_k4eh8")]
 transform = Transform3D(-0.560547, 0, -1.95628, 0, 2.035, 0, 1.95628, 0, -0.560547, 19.4793, -5.90131, -14.4686)
 
-[node name="rock_wall_7" parent="river_rocks/near_side" instance=ExtResource("10_k4eh8")]
+[node name="rock_wall_7" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("10_k4eh8")]
 transform = Transform3D(1.01815, 0, 1.76199, 0, 2.035, 0, -1.76199, 0, 1.01815, 23.7656, -5.76225, -26.6013)
 
-[node name="rock_wall_long_5" parent="river_rocks/near_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_5" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(-1.48539, 0, -1.47737, 0, 2.095, 0, 1.47737, 0, -1.48539, -10.1715, -6.11414, 22.0605)
 
-[node name="rock_wall_long_6" parent="river_rocks/near_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_6" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(-1.40896, 0, -1.55044, 0, 2.095, 0, 1.55044, 0, -1.40896, 0.344348, -6.11414, 11.1695)
 
-[node name="rock_wall_long_7" parent="river_rocks/near_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_7" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(-1.32956, 0, -1.61904, 0, 2.095, 0, 1.61904, 0, -1.32956, 10.1235, -5.86942, -0.156379)
 
-[node name="rock_wall_3" parent="river_rocks/near_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_3" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(0.446704, 0, 1.94948, 0, 2, 0, -1.94948, 0, 0.446704, 21.2276, -5.62595, -20.0828)
 
-[node name="rock_wall_4" parent="river_rocks/near_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_4" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(0.97514, 0, 1.74617, 0, 2, 0, -1.74617, 0, 0.97514, 26.9264, -5.77008, -31.7351)
 
-[node name="rock_wall_8" parent="river_rocks/near_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_8" parent="SubViewport/main/river_rocks/near_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(-0.890802, 0, -1.79066, 0, 2, 0, 1.79066, 0, -0.890802, 29.7021, -5.9245, -36.6708)
 
-[node name="far_side" type="Node3D" parent="river_rocks"]
+[node name="far_side" type="Node3D" parent="SubViewport/main/river_rocks"]
 
-[node name="rock_wall_3" parent="river_rocks/far_side" instance=ExtResource("10_k4eh8")]
+[node name="rock_wall_3" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("10_k4eh8")]
 transform = Transform3D(1.08497, 0, 1.72164, 0, 2.035, 0, -1.72164, 0, 1.08497, -9.12796, -6.82376, 31.1911)
 
-[node name="rock_wall_4" parent="river_rocks/far_side" instance=ExtResource("10_k4eh8")]
+[node name="rock_wall_4" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("10_k4eh8")]
 transform = Transform3D(-0.0726886, 0, 2.0337, 0, 2.035, 0, -2.0337, 0, -0.0726886, -11.6123, -6.82376, 37.5402)
 
-[node name="rock_wall_long_2" parent="river_rocks/far_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_2" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(1.23873, 0, 1.68954, 0, 2.095, 0, -1.68954, 0, 1.23873, 18.3563, -6.5898, 0.36679)
 
-[node name="rock_wall_long_3" parent="river_rocks/far_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_3" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(1.38912, 0, 1.56824, 0, 2.095, 0, -1.56824, 0, 1.38912, 7.92489, -6.5898, 12.4299)
 
-[node name="rock_wall_long_4" parent="river_rocks/far_side" instance=ExtResource("12_xmg7k")]
+[node name="rock_wall_long_4" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("12_xmg7k")]
 transform = Transform3D(1.38912, 0, 1.56824, 0, 2.095, 0, -1.56824, 0, 1.38912, -2.22616, -6.86341, 23.7689)
 
-[node name="rock_wall_9" parent="river_rocks/far_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_9" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(0.823665, 0, 1.82252, 0, 2, 0, -1.82252, 0, 0.823665, 24.5754, -5.90275, -8.58365)
 
-[node name="rock_wall_10" parent="river_rocks/far_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_10" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(0.97514, 0, 1.74617, 0, 2, 0, -1.74617, 0, 0.97514, 28.5518, -5.77008, -21.1763)
 
-[node name="rock_wall_12" parent="river_rocks/far_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_12" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(-0.417975, 0, -1.95584, 0, 2, 0, 1.95584, 0, -0.417975, 26.6906, -5.95271, -15.5472)
 
-[node name="rock_wall_11" parent="river_rocks/far_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_11" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(-1.21855, 0, -1.58592, 0, 2, 0, 1.58592, 0, -1.21855, 32.9694, -5.9245, -27.6346)
 
-[node name="rock_wall_13" parent="river_rocks/far_side" instance=ExtResource("11_gocj7")]
+[node name="rock_wall_13" parent="SubViewport/main/river_rocks/far_side" instance=ExtResource("11_gocj7")]
 transform = Transform3D(0.857586, 0, 1.80681, 0, 2, 0, -1.80681, 0, 0.857586, 35.5236, -5.9245, -31.7504)
+
+[node name="scene" parent="SubViewport/main" instance=ExtResource("15_vyot8")]
+transform = Transform3D(-0.212354, 0, -1.98869, 0, 2, 0, 1.98869, 0, -0.212354, -2, 0, -19.8429)
+
+[node name="ruins" type="Node3D" parent="SubViewport/main"]
+
+[node name="ruin_1_pillar" parent="SubViewport/main/ruins" instance=ExtResource("16_527og")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -2.85318, 0, 0)
 
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]
