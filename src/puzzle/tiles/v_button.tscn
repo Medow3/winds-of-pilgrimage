@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dagpp8nwijowe"]
+[gd_scene load_steps=7 format=3 uid="uid://dagpp8nwijowe"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_1sedg"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_m2trc"]
+[ext_resource type="Script" path="res://src/puzzle/tiles/v_button.gd" id="3_6uxc6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
 render_priority = 0
@@ -21,13 +22,14 @@ diffuse_mode = 3
 albedo_color = Color(1, 0.654902, 1, 1)
 roughness = 0.08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq3jx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlyig"]
 next_pass = SubResource("ShaderMaterial_xu6n6")
 diffuse_mode = 3
-albedo_color = Color(0.552941, 0, 0.741176, 1)
+albedo_color = Color(0.607843, 0, 0.627451, 1)
 roughness = 0.08
 
 [node name="VButton" instance=ExtResource("1_1sedg")]
 surface_material_override/0 = SubResource("StandardMaterial3D_35xs4")
-pressed_texture = SubResource("StandardMaterial3D_xq3jx")
+script = ExtResource("3_6uxc6")
+pressed_texture = SubResource("StandardMaterial3D_xlyig")
 released_texture = SubResource("StandardMaterial3D_35xs4")

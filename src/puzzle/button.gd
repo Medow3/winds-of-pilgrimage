@@ -39,6 +39,10 @@ func _on_trigger_body_entered(body):
 			return
 		
 		is_pressed = !is_pressed
+		if is_pressed:
+			pressed.emit()
+		else:
+			released.emit()
 
 		if disable_on_toggle:
 			is_disabled = true
