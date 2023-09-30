@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://egwqxmk4fxai"]
+[gd_scene load_steps=14 format=3 uid="uid://egwqxmk4fxai"]
 
 [ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="1_nqli1"]
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
@@ -35,6 +35,24 @@ shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 next_pass = SubResource("ShaderMaterial_58eyo")
 diffuse_mode = 3
 albedo_color = Color(0.341176, 0.572549, 1, 1)
+roughness = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+render_priority = 0
+shader = ExtResource("3_oiiis")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66wjd"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+albedo_color = Color(0.431373, 0.4, 0.356863, 1)
 roughness = 0.08
 
 [node name="TextureRect" type="TextureRect"]
@@ -82,6 +100,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_is0de")
 
 [node name="Button" parent="SubViewport/main" instance=ExtResource("4_chgqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85583, -0.433196, 2.6807)
+disabled_texture = SubResource("StandardMaterial3D_66wjd")
 
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]
