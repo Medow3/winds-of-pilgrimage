@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://clv8xln0lgppy"]
+
+[ext_resource type="PackedScene" uid="uid://c2051l2trvb1x" path="res://src/puzzle/button_puzzle.tscn" id="1_gfq0c"]
+
+[node name="ButtonPuzzle" instance=ExtResource("1_gfq0c")]
+data = {
+"cells": PackedInt32Array(65535, 65534, 3, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 3)
+}

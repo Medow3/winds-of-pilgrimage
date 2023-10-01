@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd63ttbcihkxo"]
+[gd_scene load_steps=10 format=3 uid="uid://cd63ttbcihkxo"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_ckokf"]
 [ext_resource type="PackedScene" uid="uid://clinn5hb5k2rh" path="res://src/puzzle/tiles/on_button.tscn" id="2_8jync"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://drf75uj37pbw" path="res://src/puzzle/tiles/r_button.tscn" id="8_3puhf"]
 [ext_resource type="PackedScene" uid="uid://dagpp8nwijowe" path="res://src/puzzle/tiles/v_button.tscn" id="9_24mtw"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_dn8uh"]
+
 [node name="button_puzzle_tilemap" type="Node3D"]
 
 [node name="PuzzleButton" parent="." instance=ExtResource("1_ckokf")]
@@ -18,6 +20,7 @@
 [node name="OffButton" parent="." instance=ExtResource("3_3xib5")]
 
 [node name="ConnectButton" parent="." instance=ExtResource("4_cqn6r")]
+mesh = SubResource("BoxMesh_dn8uh")
 
 [node name="TButton" parent="." instance=ExtResource("6_ob41u")]
 

@@ -16,7 +16,10 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 	]:
 		if !tiles.has(pos):
 			continue
-		if tiles[pos].is_pressed:
+		var adj_tile: PuzzleButton = tiles[pos]
+		if adj_tile.ignore_as_adjacent_tile:
+			continue
+		if adj_tile.is_pressed:
 			count += 1;
 	
 	return count == 4;

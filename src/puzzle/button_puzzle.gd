@@ -24,6 +24,8 @@ func _ready():
 		var button: PuzzleButton = TILES[item].instantiate()
 		add_child(button)
 		button.position = world_cell
+		if "grid_map_offset" in button:
+			button.position += button.grid_map_offset
 		button.pressed.connect(self.on_tile_update)
 		button.released.connect(self.on_tile_update)
 		success.connect(button.on_puzzle_success)
