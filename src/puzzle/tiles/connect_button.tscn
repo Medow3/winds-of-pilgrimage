@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctobnyvw0o27p"]
+[gd_scene load_steps=7 format=3 uid="uid://ctobnyvw0o27p"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_iman8"]
 [ext_resource type="Script" path="res://src/puzzle/tiles/connect_button.gd" id="2_k6aip"]
@@ -28,25 +28,22 @@ diffuse_mode = 3
 albedo_color = Color(0.211765, 0.788235, 0.839216, 1)
 roughness = 0.08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_daxx3"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
-diffuse_mode = 3
-albedo_color = Color(0.47451, 0.576471, 0, 1)
-roughness = 0.08
-
 [node name="ConnectButton" instance=ExtResource("1_iman8")]
 mesh = SubResource("SphereMesh_8jsye")
 surface_material_override/0 = SubResource("StandardMaterial3D_6knnw")
 script = ExtResource("2_k6aip")
-pressed_texture = SubResource("StandardMaterial3D_daxx3")
+pressed_texture = null
 released_texture = SubResource("StandardMaterial3D_6knnw")
 
-[node name="Trigger" parent="." index="0"]
+[node name="Surface" parent="." index="0"]
+visible = false
+
+[node name="Trigger" parent="." index="1"]
 visible = false
 monitoring = false
 monitorable = false
 
-[node name="Collider" parent="." index="1"]
+[node name="Collider" parent="." index="2"]
 visible = false
 collision_layer = 0
 collision_mask = 0

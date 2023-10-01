@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvplwel0553d"
-path.s3tc="res://.godot/imported/R_rune.png-74dbe4a7dc6feee826f8f1aca8339307.s3tc.ctex"
+uid="uid://cppp8vh22ygnp"
+path.s3tc="res://.godot/imported/BLANK_rune.png-7945909c38844ca85828a222cd0cf817.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/runes/R_rune.png"
-dest_files=["res://.godot/imported/R_rune.png-74dbe4a7dc6feee826f8f1aca8339307.s3tc.ctex"]
+source_file="res://assets/runes/BLANK_rune.png"
+dest_files=["res://.godot/imported/BLANK_rune.png-7945909c38844ca85828a222cd0cf817.s3tc.ctex"]
 
 [params]
 

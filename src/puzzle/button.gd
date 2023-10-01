@@ -21,7 +21,6 @@ func _set_is_disabled(val: bool):
 	_set_texture()
 
 func _set_texture():
-
 	if is_disabled and disabled_texture != null:
 		set_surface_override_material(0, disabled_texture)
 	elif is_pressed:

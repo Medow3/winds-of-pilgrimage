@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqp55g70ile1n"]
+[gd_scene load_steps=14 format=3 uid="uid://bqp55g70ile1n"]
 
 [ext_resource type="PackedScene" uid="uid://68t34ysh4uj1" path="res://src/puzzle/button.tscn" id="1_4dc01"]
 [ext_resource type="Script" path="res://src/puzzle/tiles/puzzle_button.gd" id="2_wvvrc"]
+[ext_resource type="Texture2D" uid="uid://cppp8vh22ygnp" path="res://assets/runes/BLANK_rune.png" id="3_1yxna"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_yyb5i"]
+[ext_resource type="Texture2D" uid="uid://bnvplwel0553d" path="res://assets/runes/R_rune.png" id="4_xffdl"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8qfe"]
 render_priority = 0
 shader = ExtResource("3_yyb5i")
 shader_parameter/enabled = true
@@ -16,16 +18,24 @@ shader_parameter/highlight_strength = 0.1
 shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8vr4"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_touti"]
+next_pass = SubResource("ShaderMaterial_v8qfe")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 diffuse_mode = 3
-albedo_color = Color(0, 0.305882, 0.862745, 1)
+albedo_color = Color(0.211765, 0.788235, 0.839216, 1)
+albedo_texture = ExtResource("3_1yxna")
 roughness = 0.08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhhwy"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpx1c"]
+next_pass = SubResource("ShaderMaterial_v8qfe")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 diffuse_mode = 3
-albedo_color = Color(0.533333, 0.698039, 1, 1)
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("3_1yxna")
 roughness = 0.08
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
@@ -40,14 +50,43 @@ shader_parameter/highlight_strength = 0.1
 shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgl77"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieehg"]
 next_pass = SubResource("ShaderMaterial_nlr00")
 diffuse_mode = 3
-albedo_color = Color(0.431373, 0.4, 0.356863, 1)
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+roughness = 0.08
+
+[sub_resource type="QuadMesh" id="QuadMesh_cw5qo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfjo0"]
+render_priority = 0
+shader = ExtResource("3_yyb5i")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0330j"]
+next_pass = SubResource("ShaderMaterial_dfjo0")
+transparency = 1
+diffuse_mode = 3
+albedo_color = Color(1, 0.54902, 0.537255, 1)
+albedo_texture = ExtResource("4_xffdl")
 roughness = 0.08
 
 [node name="PuzzleButton" instance=ExtResource("1_4dc01")]
 script = ExtResource("2_wvvrc")
-pressed_texture = SubResource("StandardMaterial3D_q8vr4")
-released_texture = SubResource("StandardMaterial3D_dhhwy")
-disabled_texture = SubResource("StandardMaterial3D_jgl77")
+pressed_surface_texture = SubResource("StandardMaterial3D_touti")
+released_surface_texture = SubResource("StandardMaterial3D_kpx1c")
+pressed_texture = null
+released_texture = SubResource("StandardMaterial3D_ieehg")
+disabled_texture = null
+
+[node name="Surface" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.51, 0)
+mesh = SubResource("QuadMesh_cw5qo")
+surface_material_override/0 = SubResource("StandardMaterial3D_0330j")

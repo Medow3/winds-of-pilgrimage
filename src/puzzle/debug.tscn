@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
 [node name="ButtonPuzzle" parent="SubViewport/main" instance=ExtResource("4_fsl8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05393, -1.45, 0)
 data = {
-"cells": PackedInt32Array(1, 0, 0, 1, 65533, 3, 1, 65535, 0, 1, 65534, 0, 2, 0, 3, 2, 65535, 196614, 65534, 3, 196615, 65534, 2, 196608, 65533, 3, 196608, 65533, 2, 196608, 65535, 2, 196608, 65535, 3, 196608, 65535, 4, 196608, 65534, 4, 196608, 65533, 4, 196608)
+"cells": PackedInt32Array(1, 0, 0, 1, 65533, 3, 1, 65535, 0, 1, 65534, 0, 2, 0, 3, 65535, 3, 6, 65533, 3, 4, 65533, 1, 7, 65533, 65535, 5)
 }
 
 [editable path="SubViewport/main/player"]

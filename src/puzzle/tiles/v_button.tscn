@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dagpp8nwijowe"]
+[gd_scene load_steps=10 format=3 uid="uid://dagpp8nwijowe"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_1sedg"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_m2trc"]
 [ext_resource type="Script" path="res://src/puzzle/tiles/v_button.gd" id="3_6uxc6"]
+[ext_resource type="Texture2D" uid="uid://c134kirtyxris" path="res://assets/runes/V_rune.png" id="4_dt3de"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
 render_priority = 0
@@ -22,14 +23,40 @@ diffuse_mode = 3
 albedo_color = Color(1, 0.654902, 1, 1)
 roughness = 0.08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlyig"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8qfe"]
+render_priority = 0
+shader = ExtResource("2_m2trc")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aukec"]
+next_pass = SubResource("ShaderMaterial_v8qfe")
+transparency = 2
+alpha_scissor_threshold = 0.25
+alpha_antialiasing_mode = 0
 diffuse_mode = 3
-albedo_color = Color(0.607843, 0, 0.627451, 1)
+albedo_color = Color(1, 0.654902, 1, 1)
+albedo_texture = ExtResource("4_dt3de")
+roughness = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5ta4"]
+next_pass = SubResource("ShaderMaterial_v8qfe")
+transparency = 2
+alpha_scissor_threshold = 0.25
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("4_dt3de")
 roughness = 0.08
 
 [node name="VButton" instance=ExtResource("1_1sedg")]
 surface_material_override/0 = SubResource("StandardMaterial3D_35xs4")
 script = ExtResource("3_6uxc6")
-pressed_texture = SubResource("StandardMaterial3D_xlyig")
-released_texture = SubResource("StandardMaterial3D_35xs4")
+pressed_surface_texture = SubResource("StandardMaterial3D_aukec")
+released_surface_texture = SubResource("StandardMaterial3D_k5ta4")
