@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc5tpayp62afe"]
+
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="2_5rbxx"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="3_pttcn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6yu7x"]
+size = Vector3(4, 0.2, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yetob"]
+albedo_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="Resource" id="Resource_y4hg0"]
+script = ExtResource("3_pttcn")
+size = Vector3(9.378, 1, 9.63)
+
+[node name="3x3_puzzle_box" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_6yu7x")
+surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
+
+[node name="ScatterShape2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("2_5rbxx")
+negative = true
+shape = SubResource("Resource_y4hg0")

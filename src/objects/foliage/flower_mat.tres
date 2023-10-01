@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://mkim1bqhyfpd"]
+
+[ext_resource type="Texture2D" uid="uid://bdbo64ue64xqb" path="res://assets/models/Free Shrubs Flowers and Mushrooms 3D Low Poly Pack/texture/Ekfs_bush_map.png" id="1_mmoqh"]
+[ext_resource type="Material" uid="uid://8m2ei0g2rku3" path="res://src/shaders/object_outliner.tres" id="2_v7i0f"]
+
+[resource]
+next_pass = ExtResource("2_v7i0f")
+diffuse_mode = 3
+albedo_texture = ExtResource("1_mmoqh")

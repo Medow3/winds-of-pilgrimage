@@ -3,3 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://ctyx86gxensf1" path="res://assets/models/Free Shrubs Flowers and Mushrooms 3D Low Poly Pack/all_foliage.glb" id="1_tnwwg"]
 
 [node name="all_foliage" instance=ExtResource("1_tnwwg")]
+
+[node name="flower_1" parent="." index="7"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -3.59326, 0, 4.24433)
+
+[node name="flower_2" parent="." index="8"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -2.51665, 0, 4.04723)
+
+[node name="flower_3" parent="." index="9"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -4.17312, 0, 2.86314)
+
+[node name="flower_4" parent="." index="10"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -1.4628, 0, 3.44518)
+
+[node name="flower_5" parent="." index="11"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -3.26193, 0, 1.30838)
+
+[node name="flower_6" parent="." index="12"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -1.53572, 0, 1.89885)
