@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://djypyss50e75l"]
+
+[ext_resource type="PackedScene" uid="uid://ctyx86gxensf1" path="res://assets/models/Free Shrubs Flowers and Mushrooms 3D Low Poly Pack/all_foliage.glb" id="1_tnwwg"]
+
+[node name="all_foliage" instance=ExtResource("1_tnwwg")]

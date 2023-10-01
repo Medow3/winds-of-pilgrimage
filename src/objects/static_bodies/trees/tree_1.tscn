@@ -19,7 +19,9 @@ shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56cmk"]
 next_pass = SubResource("ShaderMaterial_n76yj")
+diffuse_mode = 3
 albedo_texture = ExtResource("1_fav1s")
+roughness = 0.08
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dly66"]
 _surfaces = [{
