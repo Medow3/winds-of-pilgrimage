@@ -33,15 +33,12 @@ func _ready():
 		failure.connect(button.on_puzzle_failure)
 		tiles[cell] = button
 		set_cell_item(cell, INVALID_CELL_ITEM)
-	print(tiles)
 
 func on_tile_update():
 	for cell in tiles.keys():
 		var tile: PuzzleButton = tiles[cell]
 		if !tile.evaluate_in_puzzle(tiles, cell):
 			emit_signal("failure")
-			print("Failure")
 			return;
 	emit_signal("success")
-	print("Success")
 
