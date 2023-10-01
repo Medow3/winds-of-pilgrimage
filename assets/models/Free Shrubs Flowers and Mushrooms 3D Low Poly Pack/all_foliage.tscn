@@ -4,6 +4,21 @@
 
 [node name="all_foliage" instance=ExtResource("1_tnwwg")]
 
+[node name="bush_1" parent="." index="2"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 1.74741, 0, 1.95455)
+
+[node name="bush_2" parent="." index="3"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 4.3018, 2.38419e-07, -1.34484)
+
+[node name="bush_3" parent="." index="4"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 5.21912, 0, -0.429867)
+
+[node name="bush_4" parent="." index="5"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.48761, 0, 1.90372)
+
+[node name="bush_5" parent="." index="6"]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 3.23133, 0, 0.520621)
+
 [node name="flower_1" parent="." index="7"]
 transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, -3.59326, 0, 4.24433)
 
