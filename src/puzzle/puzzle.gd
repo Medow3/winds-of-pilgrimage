@@ -1,4 +1,4 @@
-class_name ButtonPuzzle extends GridMap
+class_name Puzzle extends GridMap
 
 var tiles: Dictionary = {} 
 
@@ -13,7 +13,8 @@ var TILES = [
 	load("res://src/puzzle/tiles/t_button.tscn"),
 	load("res://src/puzzle/tiles/x_button.tscn"),
 	load("res://src/puzzle/tiles/r_button.tscn"),
-	load("res://src/puzzle/tiles/v_button.tscn")
+	load("res://src/puzzle/tiles/v_button.tscn"),
+	load("res://src/puzzle/tiles/wall_button.tscn"),
 ]
 
 # Called when the node enters the scene tree for the first time.

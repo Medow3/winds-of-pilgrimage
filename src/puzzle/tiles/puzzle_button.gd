@@ -3,8 +3,8 @@ class_name PuzzleButton extends GameButton
 @export var pressed_surface_texture: StandardMaterial3D = null
 @export var released_surface_texture: StandardMaterial3D = null
 
-var grid_map_offset: Vector3 = Vector3(0.0, 0.0, 0.0)
-var ignore_as_adjacent_tile = false
+@export var grid_map_offset: Vector3 = Vector3(0.0, 0.0, 0.0)
+@export var ignore_as_adjacent_tile = false
 
 # Override this method
 func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):

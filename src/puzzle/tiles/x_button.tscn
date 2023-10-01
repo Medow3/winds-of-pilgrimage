@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://src/puzzle/tiles/x_button.gd" id="3_xpr27"]
 [ext_resource type="Texture2D" uid="uid://c7q3m5ctinic" path="res://assets/runes/X_rune.png" id="4_vku4p"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysyj3"]
 render_priority = 0
 shader = ExtResource("2_8yevo")
 shader_parameter/enabled = true
@@ -18,7 +18,7 @@ shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf5vb"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
+next_pass = SubResource("ShaderMaterial_ysyj3")
 diffuse_mode = 3
 albedo_color = Color(1, 0.678431, 0.356863, 1)
 roughness = 0.08

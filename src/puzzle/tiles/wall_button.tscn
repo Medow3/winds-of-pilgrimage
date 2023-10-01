@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://crfjvj2d7d51l"]
+
+[ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_n1d7j"]
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_tcvpo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
+render_priority = 0
+shader = ExtResource("2_tcvpo")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieehg"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+roughness = 0.08
+
+[node name="WallButton" instance=ExtResource("1_n1d7j")]
+surface_material_override/0 = SubResource("StandardMaterial3D_ieehg")
+pressed_surface_texture = null
+released_surface_texture = null
+ignore_as_adjacent_tile = true
+is_disabled = true
+
+[node name="Surface" parent="." index="0"]
+visible = false
+
+[node name="Trigger" parent="." index="1"]
+visible = false
+monitoring = false
+
+[node name="Collider" parent="." index="2"]
+visible = false
