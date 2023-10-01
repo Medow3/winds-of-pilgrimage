@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://clinn5hb5k2rh"]
+[gd_scene load_steps=6 format=3 uid="uid://clinn5hb5k2rh"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_i12na"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_1xgir"]
@@ -15,6 +15,11 @@ shader_parameter/highlight_strength = 0.1
 shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwflg"]
+next_pass = SubResource("ShaderMaterial_xu6n6")
+diffuse_mode = 3
+roughness = 0.08
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnm7j"]
 next_pass = SubResource("ShaderMaterial_xu6n6")
 diffuse_mode = 3
@@ -22,9 +27,8 @@ albedo_color = Color(0, 0.305882, 0.862745, 1)
 roughness = 0.08
 
 [node name="OnButton" instance=ExtResource("1_i12na")]
-surface_material_override/0 = SubResource("StandardMaterial3D_qnm7j")
+surface_material_override/0 = SubResource("StandardMaterial3D_hwflg")
 is_pressed = true
 is_disabled = true
-pressed_texture = null
 released_texture = null
 disabled_texture = SubResource("StandardMaterial3D_qnm7j")

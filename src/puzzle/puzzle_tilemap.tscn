@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd63ttbcihkxo"]
+[gd_scene load_steps=11 format=3 uid="uid://cd63ttbcihkxo"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_ckokf"]
 [ext_resource type="PackedScene" uid="uid://clinn5hb5k2rh" path="res://src/puzzle/tiles/on_button.tscn" id="2_8jync"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dkhhfhmoghnbh" path="res://src/puzzle/tiles/t_button.tscn" id="6_ob41u"]
 [ext_resource type="PackedScene" uid="uid://dmsbwkhriomua" path="res://src/puzzle/tiles/x_button.tscn" id="7_vfgcs"]
 [ext_resource type="PackedScene" uid="uid://drf75uj37pbw" path="res://src/puzzle/tiles/r_button.tscn" id="8_3puhf"]
+[ext_resource type="PackedScene" uid="uid://crfjvj2d7d51l" path="res://src/puzzle/tiles/wall_button.tscn" id="9_8dtf2"]
 [ext_resource type="PackedScene" uid="uid://dagpp8nwijowe" path="res://src/puzzle/tiles/v_button.tscn" id="9_24mtw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dn8uh"]
 
-[node name="button_puzzle_tilemap" type="Node3D"]
+[node name="PuzzleTilemap" type="Node3D"]
 
 [node name="PuzzleButton" parent="." instance=ExtResource("1_ckokf")]
 
@@ -29,3 +30,5 @@ mesh = SubResource("BoxMesh_dn8uh")
 [node name="RButton" parent="." instance=ExtResource("8_3puhf")]
 
 [node name="VButton" parent="." instance=ExtResource("9_24mtw")]
+
+[node name="WallButton" parent="." instance=ExtResource("9_8dtf2")]

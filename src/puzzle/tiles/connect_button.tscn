@@ -10,7 +10,7 @@ height = 0.281
 radial_segments = 16
 rings = 8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6n6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8fke"]
 render_priority = 0
 shader = ExtResource("3_vn3qr")
 shader_parameter/enabled = true
@@ -23,7 +23,7 @@ shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6knnw"]
-next_pass = SubResource("ShaderMaterial_xu6n6")
+next_pass = SubResource("ShaderMaterial_g8fke")
 diffuse_mode = 3
 albedo_color = Color(0.211765, 0.788235, 0.839216, 1)
 roughness = 0.08
@@ -32,7 +32,9 @@ roughness = 0.08
 mesh = SubResource("SphereMesh_8jsye")
 surface_material_override/0 = SubResource("StandardMaterial3D_6knnw")
 script = ExtResource("2_k6aip")
-pressed_texture = null
+grid_map_offset = Vector3(0, 0.5, 0)
+ignore_as_adjacent_tile = true
+is_pressed = true
 released_texture = SubResource("StandardMaterial3D_6knnw")
 
 [node name="Surface" parent="." index="0"]
