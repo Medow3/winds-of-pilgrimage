@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6r7sxaifyiv"
+path="res://.godot/imported/Low_Poly_Forest_hill.obj-0e4c90e60a781e6ef18a1f9cb92d9c3b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Low_Poly_Forest_hill.obj-0e4c90e60a781e6ef18a1f9cb92d9c3b.mesh"]
+
+source_file="res://assets/models/Low_Poly_Forest_Pack_Devilswork.Shop_v02/Low_Poly_Forest_Pack_Devilswork.Shop_v02/OBJ/Low_Poly_Forest_hill.obj"
+dest_files=["res://.godot/imported/Low_Poly_Forest_hill.obj-0e4c90e60a781e6ef18a1f9cb92d9c3b.mesh", "res://.godot/imported/Low_Poly_Forest_hill.obj-0e4c90e60a781e6ef18a1f9cb92d9c3b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

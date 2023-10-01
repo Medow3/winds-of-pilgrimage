@@ -1,26 +1,37 @@
-[gd_scene load_steps=37 format=3 uid="uid://oj1reytmc2gk"]
+[gd_scene load_steps=48 format=3 uid="uid://oj1reytmc2gk"]
 
 [ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="1_nqli1"]
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="2_1wwoe"]
-[ext_resource type="Material" path="res://src/shaders/object_outliner.tres" id="3_d1bld"]
+[ext_resource type="Material" uid="uid://8m2ei0g2rku3" path="res://src/shaders/object_outliner.tres" id="3_d1bld"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_ha16s"]
 [ext_resource type="Resource" path="res://src/world/terrain_data/data.hterrain" id="5_tuqya"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_c0tgl"]
 [ext_resource type="Shader" path="res://src/shaders/water.gdshader" id="7_432t3"]
 [ext_resource type="PackedScene" uid="uid://c6pq0f742lv2n" path="res://src/objects/static_bodies/rock_wall_1.tscn" id="10_k4eh8"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/dark_rock_wall_long.tscn" id="11_7mdi8"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/rock_wall_2.tscn" id="11_gocj7"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/dark_rock_wall_small.tscn" id="12_jfq4b"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/rock_wall_3.tscn" id="12_xmg7k"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/dark_rock_wall_2_small.tscn" id="13_dmg1q"]
-[ext_resource type="PackedScene" path="res://src/objects/static_bodies/dark_rock_wall_corner_long.tscn" id="14_quh7i"]
-[ext_resource type="PackedScene" uid="uid://d2wqx8rcf8y2i" path="res://assets/models/ancient_ruins_pack/all_ruins.tscn" id="15_vyot8"]
+[ext_resource type="PackedScene" uid="uid://d0ympogowsx7t" path="res://src/objects/static_bodies/dark_rock_wall_long.tscn" id="11_7mdi8"]
+[ext_resource type="PackedScene" uid="uid://dnjpo7ialjhvt" path="res://src/objects/static_bodies/rock_wall_2.tscn" id="11_gocj7"]
+[ext_resource type="PackedScene" uid="uid://dff4ecxfyvjon" path="res://src/objects/static_bodies/dark_rock_wall_small.tscn" id="12_jfq4b"]
+[ext_resource type="PackedScene" uid="uid://cu78v624caffm" path="res://src/objects/static_bodies/rock_wall_3.tscn" id="12_xmg7k"]
+[ext_resource type="PackedScene" uid="uid://dxqfje0i0y24i" path="res://src/objects/static_bodies/dark_rock_wall_2_small.tscn" id="13_dmg1q"]
+[ext_resource type="PackedScene" uid="uid://cf5xvsfmwpb4t" path="res://src/objects/static_bodies/dark_rock_wall_corner_long.tscn" id="14_quh7i"]
 [ext_resource type="PackedScene" uid="uid://b416q7rvyirud" path="res://src/objects/static_bodies/ruins/ruin_1_pillar.tscn" id="16_527og"]
 [ext_resource type="PackedScene" uid="uid://cy86ag2uvh71g" path="res://src/objects/static_bodies/rock_wall_1_light.tscn" id="17_c5qqa"]
 [ext_resource type="PackedScene" uid="uid://bl1fh28d0j8mw" path="res://src/objects/static_bodies/rock_wall_2_light.tscn" id="18_l68v0"]
 [ext_resource type="PackedScene" uid="uid://n8v81q2l7nd7" path="res://src/objects/static_bodies/rock_wall_curve_light.tscn" id="19_3vcqt"]
 [ext_resource type="PackedScene" uid="uid://cotim0hn0tp1g" path="res://src/objects/static_bodies/rock_wall_long_light.tscn" id="20_11eyw"]
+[ext_resource type="PackedScene" uid="uid://cpe6p6sr6jmym" path="res://src/objects/static_bodies/trees/tree_1.tscn" id="20_jrbp7"]
 [ext_resource type="PackedScene" uid="uid://bbhckclwogdex" path="res://src/objects/static_bodies/ruins/ruin_1_all.tscn" id="21_tds3l"]
+[ext_resource type="PackedScene" uid="uid://cgbviwnsu1pkb" path="res://src/objects/static_bodies/ruins/ruin_2_all.tscn" id="21_x2tb2"]
+[ext_resource type="PackedScene" uid="uid://be51c6p5b2mqr" path="res://src/objects/static_bodies/ruins/ruin_3_all.tscn" id="22_p4gwr"]
+[ext_resource type="PackedScene" uid="uid://dvc3hfvaj3rht" path="res://src/objects/static_bodies/ruins/ruin_4_all.tscn" id="23_j60tb"]
+[ext_resource type="PackedScene" uid="uid://bfr6nmdevpak1" path="res://src/objects/static_bodies/ruins/ruin_5_all.tscn" id="24_cj2p6"]
+[ext_resource type="PackedScene" uid="uid://24gmysgsdgq1" path="res://src/objects/static_bodies/ruins/ruin_6_all.tscn" id="25_y7hr6"]
+[ext_resource type="PackedScene" uid="uid://di7bpahn8m8ad" path="res://src/objects/static_bodies/ruins/ruin_7_all.tscn" id="26_xfr4m"]
+[ext_resource type="PackedScene" uid="uid://v0xi4arko1kr" path="res://src/objects/static_bodies/ruins/ruin_8_all.tscn" id="27_sa4rc"]
+[ext_resource type="PackedScene" uid="uid://bxuxabvmu8g5g" path="res://src/objects/static_bodies/ruins/ruin_9_all.tscn" id="28_c6vwb"]
+[ext_resource type="PackedScene" uid="uid://dr2sqb4cqao3k" path="res://src/objects/static_bodies/ruins/ruin_10_all.tscn" id="29_m4wq1"]
+[ext_resource type="PackedScene" uid="uid://dcuqrhs7fgwd6" path="res://src/objects/static_bodies/ruins/ruin_11_all.tscn" id="30_1trux"]
+[ext_resource type="PackedScene" uid="uid://45gxvbwbn1iu" path="res://src/objects/static_bodies/ruins/ruin_12_all.tscn" id="31_bx208"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
 viewport_path = NodePath("SubViewport")
@@ -154,10 +165,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_31nw5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.76, 0)
 mesh = SubResource("PlaneMesh_0gabx")
 surface_material_override/0 = SubResource("ShaderMaterial_nipwf")
-
-[node name="scene" parent="SubViewport/main" instance=ExtResource("15_vyot8")]
-transform = Transform3D(-0.212354, 0, -1.98869, 0, 2, 0, 1.98869, 0, -0.212354, -2, 0, -19.8429)
-visible = false
 
 [node name="rock_cliffs" type="Node3D" parent="SubViewport/main"]
 
@@ -337,7 +344,7 @@ transform = Transform3D(0.857586, 0, 1.80681, 0, 2, 0, -1.80681, 0, 0.857586, 35
 [node name="ruins" type="Node3D" parent="SubViewport/main/rock_cliffs"]
 
 [node name="ruin_1_pillar" parent="SubViewport/main/rock_cliffs/ruins" instance=ExtResource("16_527og")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -2.85318, 0, 0)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -14.7793, 0, 2.11655)
 
 [node name="mountain" type="Node3D" parent="SubViewport/main/rock_cliffs"]
 
@@ -644,6 +651,21 @@ transform = Transform3D(0.952741, 0, -0.303784, 0, 1, 0, 0.303784, 0, 0.952741, 
 mesh = SubResource("BoxMesh_6yu7x")
 surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
 
+[node name="3x3_puzzle_box4" type="MeshInstance3D" parent="SubViewport/main"]
+transform = Transform3D(0.719873, 0, 0.694106, 0, 1, 0, -0.694106, 0, 0.719873, 20.0773, -1.90735e-06, -54.0528)
+mesh = SubResource("BoxMesh_6yu7x")
+surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
+
+[node name="3x3_puzzle_box5" type="MeshInstance3D" parent="SubViewport/main"]
+transform = Transform3D(0.939262, 0, 0.3432, 0, 1, 0, -0.3432, 0, 0.939262, -14.6632, -1.90735e-06, -29.3831)
+mesh = SubResource("BoxMesh_6yu7x")
+surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
+
+[node name="3x3_puzzle_box6" type="MeshInstance3D" parent="SubViewport/main"]
+transform = Transform3D(0.939262, 0, 0.3432, 0, 1, 0, -0.3432, 0, 0.939262, 12.8154, -9.53674e-07, -20.5017)
+mesh = SubResource("BoxMesh_6yu7x")
+surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
+
 [node name="final_puzzle" type="MeshInstance3D" parent="SubViewport/main"]
 transform = Transform3D(0.999758, 0, 0.021989, 0, 1, 0, -0.021989, 0, 0.999758, 3.7452, 0, -33.1704)
 mesh = SubResource("BoxMesh_wswjb")
@@ -654,8 +676,81 @@ transform = Transform3D(0.952741, 0, -0.303784, 0, 1, 0, 0.303784, 0, 0.952741, 
 mesh = SubResource("BoxMesh_wc0ju")
 surface_material_override/0 = SubResource("StandardMaterial3D_yetob")
 
-[node name="ruin_1_all" parent="SubViewport/main" instance=ExtResource("21_tds3l")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -3.10998, 0, -7.68336)
+[node name="trees" type="Node3D" parent="SubViewport/main"]
+
+[node name="tree_1" parent="SubViewport/main/trees" instance=ExtResource("20_jrbp7")]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, -5.77639, 0, -1.75814)
+
+[node name="ruins" type="Node3D" parent="SubViewport/main"]
+
+[node name="ruin_1_all" parent="SubViewport/main/ruins" instance=ExtResource("21_tds3l")]
+transform = Transform3D(-1.65904, 0, -0.556847, 0, 1.75, 0, 0.556847, 0, -1.65904, -12.3973, 0, -33.4616)
+
+[node name="ruin_2_all" parent="SubViewport/main/ruins" instance=ExtResource("21_x2tb2")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -10, 0, -43)
+
+[node name="ruin_3_all" parent="SubViewport/main/ruins" instance=ExtResource("22_p4gwr")]
+transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 11.5954, 0, -30.9173)
+
+[node name="ruin_4_all" parent="SubViewport/main/ruins" instance=ExtResource("23_j60tb")]
+transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 1.88393, -0.032537, -22.938)
+
+[node name="ruin_4_all2" parent="SubViewport/main/ruins" node_paths=PackedStringArray("mesh_instances") instance=ExtResource("23_j60tb")]
+transform = Transform3D(0.00363848, 0, -0.0176284, 0, 0.018, 0, 0.0176284, 0, 0.00363848, 10.9829, -0.032537, -51.0648)
+mesh_instances = [NodePath("../ruin_4_all/Pillar4_Material_001_0")]
+
+[node name="ruin_5_all" parent="SubViewport/main/ruins" instance=ExtResource("24_cj2p6")]
+transform = Transform3D(0.0162754, 0, 0.00768846, 0, 0.018, 0, -0.00768846, 0, 0.0162754, -10.9885, 0, -21.7652)
+
+[node name="ruin_6_all" parent="SubViewport/main/ruins" instance=ExtResource("25_y7hr6")]
+transform = Transform3D(0.00710366, 0, -0.016539, 0, 0.018, 0, 0.016539, 0, 0.00710366, -16.8021, 0, -24.7285)
+
+[node name="ruin_7_all" parent="SubViewport/main/ruins" instance=ExtResource("26_xfr4m")]
+transform = Transform3D(-0.000240324, 0, 0.0179984, 0, 0.018, 0, -0.0179984, 0, -0.000240324, -13.1153, 0, -7.88807)
+
+[node name="ruin_8_all" parent="SubViewport/main/ruins" instance=ExtResource("27_sa4rc")]
+transform = Transform3D(-7.0371e-05, 0, -0.0179999, 0, 0.018, 0, 0.0179999, 0, -7.0371e-05, 4.05258, 0, -28.0028)
+
+[node name="ruin_9_all" parent="SubViewport/main/ruins" instance=ExtResource("28_c6vwb")]
+transform = Transform3D(-0.0134382, 0, 0.0119756, 0, 0.018, 0, -0.0119756, 0, -0.0134382, 3.11554, 0, -42.9363)
+
+[node name="ruin_9_all2" parent="SubViewport/main/ruins" node_paths=PackedStringArray("mesh_instances") instance=ExtResource("28_c6vwb")]
+transform = Transform3D(-0.0179923, 0, -0.000526773, 0, 0.018, 0, 0.000526773, 0, -0.0179923, -1.8049, 0, -37.3201)
+mesh_instances = [NodePath("../ruin_9_all/Bricks9_Estructura1_0"), NodePath("../ruin_9_all/Pillar9_Material_001_0"), NodePath("../ruin_9_all/Wall9_Estructura1_0")]
+
+[node name="Pillar9_Material_001_0" parent="SubViewport/main/ruins/ruin_9_all2" index="1"]
+visible = false
+
+[node name="@CollisionShape3D@315262" parent="SubViewport/main/ruins/ruin_9_all2" index="2"]
+visible = false
+
+[node name="@CollisionShape3D@315261" parent="SubViewport/main/ruins/ruin_9_all2" index="3"]
+visible = false
+
+[node name="@CollisionShape3D@315260" parent="SubViewport/main/ruins/ruin_9_all2" index="4"]
+visible = false
+
+[node name="@CollisionShape3D@315259" parent="SubViewport/main/ruins/ruin_9_all2" index="5"]
+visible = false
+
+[node name="@CollisionShape3D@315258" parent="SubViewport/main/ruins/ruin_9_all2" index="6"]
+visible = false
+
+[node name="@CollisionShape3D@315257" parent="SubViewport/main/ruins/ruin_9_all2" index="7"]
+visible = false
+
+[node name="CollisionShape3D" parent="SubViewport/main/ruins/ruin_9_all2" index="8"]
+visible = false
+
+[node name="ruin_10_all" parent="SubViewport/main/ruins" instance=ExtResource("29_m4wq1")]
+transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 0.0945206, 0, 38.3089)
+
+[node name="ruin_11_all" parent="SubViewport/main/ruins" instance=ExtResource("30_1trux")]
+transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 9.71746, 0, -8.84892)
+
+[node name="ruin_12_all" parent="SubViewport/main/ruins" instance=ExtResource("31_bx208")]
+transform = Transform3D(-9.51909e-05, 0, 0.0179997, 0, 0.018, 0, -0.0179997, 0, -9.51909e-05, -3.71349, 0, -7.54203)
 
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]
+[editable path="SubViewport/main/ruins/ruin_9_all2"]
