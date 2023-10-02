@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqifni80r2g55"]
+
+[ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="1_cltpy"]
+[ext_resource type="Script" path="res://src/puzzle/progress_tower.gd" id="1_vrat2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pn1r2"]
+size = Vector3(1, 5, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
+render_priority = 0
+shader = ExtResource("1_cltpy")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0wju"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+roughness = 0.08
+
+[sub_resource type="SphereMesh" id="SphereMesh_ungxs"]
+radius = 0.141
+height = 0.281
+radial_segments = 16
+rings = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysyj3"]
+render_priority = 0
+shader = ExtResource("1_cltpy")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbmy1"]
+next_pass = SubResource("ShaderMaterial_ysyj3")
+diffuse_mode = 3
+albedo_color = Color(1, 0.678431, 0.356863, 1)
+roughness = 0.08
+
+[node name="ProgressTower" type="Node3D"]
+script = ExtResource("1_vrat2")
+
+[node name="Tower" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_pn1r2")
+surface_material_override/0 = SubResource("StandardMaterial3D_m0wju")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("SphereMesh_ungxs")
+surface_material_override/0 = SubResource("StandardMaterial3D_pbmy1")

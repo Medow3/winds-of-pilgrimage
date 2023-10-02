@@ -22,7 +22,6 @@ func set_path(tiles: Dictionary, start: Vector3i, end: Vector3i, visited: Dictio
 		end_pos = tiles[end].position
 		vertices.push_back(end_pos - start_pos + line_height + grid_map_offset)
 		
-	
 	vertices.push_back(line_height)
 	vertices.push_back(Vector3(0, 0, 0))
 	
@@ -75,11 +74,11 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 	
 	return false
 
-func on_puzzle_success():
-	super.on_puzzle_success()
+func on_puzzle_success(_puzzle):
+	super.on_puzzle_success(_puzzle)
 	$Line.visible = true
 	$Line.mesh = path;
 	
-func on_puzzle_failure():
-	super.on_puzzle_failure()
+func on_puzzle_failure(_puzzle):
+	super.on_puzzle_failure(_puzzle)
 	$Line.visible = false

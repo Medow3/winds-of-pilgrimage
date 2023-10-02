@@ -10,7 +10,7 @@ height = 0.281
 radial_segments = 16
 rings = 8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8fke"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aelap"]
 render_priority = 0
 shader = ExtResource("3_vn3qr")
 shader_parameter/enabled = true
@@ -23,7 +23,7 @@ shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
 shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6knnw"]
-next_pass = SubResource("ShaderMaterial_g8fke")
+next_pass = SubResource("ShaderMaterial_aelap")
 diffuse_mode = 3
 albedo_color = Color(0.211765, 0.788235, 0.839216, 1)
 roughness = 0.08
@@ -42,6 +42,7 @@ released_texture = SubResource("StandardMaterial3D_6knnw")
 [node name="Line" type="MeshInstance3D" parent="." index="0"]
 visible = false
 material_override = SubResource("StandardMaterial3D_6knnw")
+cast_shadow = 0
 mesh = SubResource("PlaceholderMesh_6c4el")
 
 [node name="Surface" parent="." index="1"]

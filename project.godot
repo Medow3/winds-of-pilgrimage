@@ -23,6 +23,7 @@ Music="*res://src/managers/music.tscn"
 Settings="*res://src/managers/settings.gd"
 SFX="*res://src/managers/sound_fx.tscn"
 SaveData="*res://src/managers/save_data.gd"
+Progress="*res://src/puzzle/progress.gd"
 
 [display]
 

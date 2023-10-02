@@ -1,9 +1,11 @@
 class_name Puzzle extends GridMap
 
+@export var progress_layer = -1
+
 var tiles: Dictionary = {} 
 
-signal success
-signal failure
+signal success(Puzzle)
+signal failure(Puzzle)
 
 var TILES = [
 	load("res://src/puzzle/tiles/puzzle_button.tscn"),
@@ -15,6 +17,7 @@ var TILES = [
 	load("res://src/puzzle/tiles/r_button.tscn"),
 	load("res://src/puzzle/tiles/v_button.tscn"),
 	load("res://src/puzzle/tiles/wall_button.tscn"),
+	load("res://src/puzzle/tiles/progress_button.tscn"),
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -38,7 +41,7 @@ func on_tile_update():
 	for cell in tiles.keys():
 		var tile: PuzzleButton = tiles[cell]
 		if !tile.evaluate_in_puzzle(tiles, cell):
-			emit_signal("failure")
+			failure.emit(self)
 			return;
-	emit_signal("success")
+	success.emit(self)
 

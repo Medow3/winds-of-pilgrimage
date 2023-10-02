@@ -10,10 +10,10 @@ class_name PuzzleButton extends GameButton
 func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 	return true
 
-func on_puzzle_failure():
+func on_puzzle_failure(puzzle: Puzzle):
 	pass
 
-func on_puzzle_success():
+func on_puzzle_success(puzzle: Puzzle):
 	pass
 
 func _set_texture():

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://g01or3w68pda" path="res://src/world/world_environment.tscn" id="1_wdth0"]
 [ext_resource type="PackedScene" uid="uid://byaovh047qqy0" path="res://src/player/player.tscn" id="2_ygspl"]
-[ext_resource type="PackedScene" uid="uid://bsvlc0x6l6l0y" path="res://src/puzzle/puzzles/puzzle_bonus_3.tscn" id="3_28tkc"]
-[ext_resource type="PackedScene" uid="uid://cejwu3k0eutr5" path="res://src/puzzle/puzzles/puzzle_bonus_1.tscn" id="4_x3cs0"]
+[ext_resource type="PackedScene" uid="uid://cs65ms74tbtg6" path="res://src/puzzle/puzzles/puzzle_3.tscn" id="3_hivtv"]
+[ext_resource type="PackedScene" uid="uid://bqifni80r2g55" path="res://src/puzzle/progress_tower.tscn" id="3_ycpat"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dcpcg"]
 viewport_path = NodePath("SubViewport")
@@ -55,11 +55,11 @@ shape = SubResource("ConvexPolygonShape3D_e1xtn")
 [node name="player" parent="SubViewport/main" instance=ExtResource("2_ygspl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576287, 0)
 
-[node name="PuzzleBonus3" parent="SubViewport/main" instance=ExtResource("3_28tkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45, 5)
+[node name="progress_tower" parent="SubViewport/main" instance=ExtResource("3_ycpat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79178, 0, 0)
 
-[node name="PuzzleBonus1" parent="SubViewport/main" instance=ExtResource("4_x3cs0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45, -5)
+[node name="Puzzle3" parent="SubViewport/main" instance=ExtResource("3_hivtv")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -1.45, 0)
 
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]
