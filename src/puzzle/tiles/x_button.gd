@@ -7,7 +7,7 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 		start + Vector3i(-1, 0, -1), 
 		start + Vector3i(1, 0, -1),
 		start + Vector3i(1, 0, 1),
-		start + Vector3i(1, 0, -1),
+		start + Vector3i(-1, 0, 1),
 	]:
 		
 		if !tiles.has(pos):
