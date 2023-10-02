@@ -1,0 +1,186 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfnxqa0v5p3u7"]
+
+[ext_resource type="FontFile" uid="uid://dey1nm70rh0oo" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="1_57xlk"]
+[ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_idd51"]
+[ext_resource type="StyleBox" uid="uid://cljnw0bkh7wpa" path="res://src/ui/main_menu_button.tres" id="3_n0k74"]
+[ext_resource type="StyleBox" uid="uid://t3xcabjsf8ab" path="res://src/ui/hover.tres" id="4_xbiy7"]
+
+[node name="main_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_idd51")
+
+[node name="main" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.65098, 0.65098, 0.65098, 0.117647)
+
+[node name="Label" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 8.0
+offset_right = 66.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+text = "Winds of Pilgrimage"
+horizontal_alignment = 1
+
+[node name="begin" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+theme_override_styles/normal = ExtResource("3_n0k74")
+theme_override_styles/hover = ExtResource("4_xbiy7")
+theme_override_styles/pressed = ExtResource("3_n0k74")
+theme_override_styles/focus = ExtResource("3_n0k74")
+text = "Begin"
+
+[node name="credits" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 14.0
+offset_right = 27.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+theme_override_styles/normal = ExtResource("3_n0k74")
+theme_override_styles/hover = ExtResource("4_xbiy7")
+theme_override_styles/pressed = ExtResource("3_n0k74")
+theme_override_styles/focus = ExtResource("3_n0k74")
+text = "Credits
+"
+
+[node name="Button" type="Button" parent="main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 1.0
+offset_right = -54.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+text = "Continue"
+
+[node name="credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="credits_page" type="ColorRect" parent="credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.65098, 0.65098, 0.65098, 0.309804)
+
+[node name="Label" type="Label" parent="credits/credits_page"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 17.0
+offset_right = 66.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="credits/credits_page"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 41.0
+offset_right = 107.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+theme_override_font_sizes/font_size = 12
+text = "A game by Medow, Grace, and Brenden for Ludum Dare 54.
+Credits for assets used in the description."
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="credits/credits_page"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 36.0
+offset_right = -76.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_57xlk")
+theme_override_styles/normal = ExtResource("3_n0k74")
+theme_override_styles/hover = ExtResource("4_xbiy7")
+theme_override_styles/pressed = ExtResource("3_n0k74")
+theme_override_styles/focus = ExtResource("3_n0k74")
+text = "Back
+"
+
+[connection signal="pressed" from="main/begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="credits/credits_page/back" to="." method="_on_back_pressed"]

@@ -1,7 +1,7 @@
 extends Node
 
 @onready var music_player = $music_player
-@onready var tween = $Tween
+@onready var ruins_music = $music_player_ruins
 
 const MUSIC_DIRECTORY_PATH = "res://assets/audio/music/"
 const DEFAULT_MUSIC_VOLUME: float = -10.0
@@ -16,6 +16,8 @@ var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
+	Music.play_song("Ludum_Dare_Test_54_windy")
+	ruins_music.play()
 	_rng.randomize()
 	set_up_music_library_recursive(MUSIC_DIRECTORY_PATH)
 
@@ -50,4 +52,17 @@ func play_song(new_song: String, volume: float = DEFAULT_MUSIC_VOLUME, fade_dura
 		music_player.play()
 		tween = get_tree().create_tween().set_trans(MUSIC_CROSSFADE_TWEEN_TRANS).set_ease(MUSIC_CROSSFADE_TWEEN_EASE)
 		tween.tween_property(music_player, "volume_db", volume, fade_duration).from(-80)
+
+
+
+
+func play_ruins():
+	var tween: Tween = get_tree().create_tween().set_trans(MUSIC_CROSSFADE_TWEEN_TRANS).set_ease(MUSIC_CROSSFADE_TWEEN_EASE)
+	tween.tween_property(ruins_music, "volume_db", DEFAULT_MUSIC_VOLUME, DEFAULT_CROSSFADE_TIME).from_current()
+
+
+func stop_ruins():
+	var tween: Tween = get_tree().create_tween().set_trans(MUSIC_CROSSFADE_TWEEN_TRANS).set_ease(MUSIC_CROSSFADE_TWEEN_EASE)
+	tween.tween_property(ruins_music, "volume_db", -80.0, DEFAULT_CROSSFADE_TIME).from_current()
+
 

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ruins_LudumDare_54.ogg-e95fbaf2fcf33d0b4a12ea
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
