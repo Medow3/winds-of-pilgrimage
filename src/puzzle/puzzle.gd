@@ -40,6 +40,7 @@ func _ready():
 		failure.connect(button.on_puzzle_failure)
 		tiles[cell] = button
 		set_cell_item(cell, INVALID_CELL_ITEM)
+	on_tile_update()
 
 func on_tile_update():
 	var puzzle_correct = true

@@ -4,11 +4,8 @@
 [ext_resource type="Script" path="res://src/puzzle/tiles/progress_button.gd" id="2_g8t1j"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="3_4nere"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_nvg3t"]
-radius = 0.141
-height = 0.281
-radial_segments = 16
-rings = 8
+[sub_resource type="BoxMesh" id="BoxMesh_set2h"]
+size = Vector3(0.3, 0.3, 0.3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ysyj3"]
 render_priority = 0
@@ -36,7 +33,7 @@ roughness = 0.08
 [sub_resource type="PlaceholderMesh" id="PlaceholderMesh_03acl"]
 
 [node name="ProgressButton" instance=ExtResource("1_gvied")]
-mesh = SubResource("SphereMesh_nvg3t")
+mesh = SubResource("BoxMesh_set2h")
 surface_material_override/0 = SubResource("StandardMaterial3D_2gcw1")
 script = ExtResource("2_g8t1j")
 pressed_surface_texture = null

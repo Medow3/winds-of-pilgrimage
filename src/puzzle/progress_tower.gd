@@ -23,5 +23,4 @@ func on_puzzle_finished(puzzle: Puzzle, progress_button: ProgressButton):
 	if unique_puzzles.size() >= puzzle_threshold:
 		puzzle_threshold_met.emit()
 		puzzle_threshold_met_flag = true
-		print("AAA")
 		

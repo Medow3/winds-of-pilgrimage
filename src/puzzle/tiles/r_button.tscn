@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://drf75uj37pbw"]
+[gd_scene load_steps=13 format=3 uid="uid://drf75uj37pbw"]
 
 [ext_resource type="PackedScene" uid="uid://bqp55g70ile1n" path="res://src/puzzle/tiles/puzzle_button.tscn" id="1_m6kfj"]
 [ext_resource type="Shader" path="res://src/shaders/object_outliner.gdshader" id="2_qv0yj"]
@@ -21,6 +21,30 @@ shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
 next_pass = SubResource("ShaderMaterial_07kad")
 diffuse_mode = 3
 albedo_color = Color(1, 0.54902, 0.537255, 1)
+roughness = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlr00"]
+render_priority = 0
+shader = ExtResource("2_qv0yj")
+shader_parameter/enabled = true
+shader_parameter/pixelate = 256.0
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(0.996078, 1, 0.901961, 1)
+shader_parameter/shadow_color = Color(0.0627451, 0.0627451, 0.0705882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duv87"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(0.14902, 0.6, 0.356863, 1)
+roughness = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxf70"]
+next_pass = SubResource("ShaderMaterial_nlr00")
+diffuse_mode = 3
+albedo_color = Color(1, 0.247059, 0.301961, 1)
 roughness = 0.08
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3p1s"]
@@ -58,5 +82,7 @@ roughness = 0.08
 [node name="RButton" instance=ExtResource("1_m6kfj")]
 surface_material_override/0 = SubResource("StandardMaterial3D_8np0l")
 script = ExtResource("3_8q5a2")
+evaluating_material = SubResource("StandardMaterial3D_duv87")
+non_evaluating_material = SubResource("StandardMaterial3D_pxf70")
 pressed_surface_texture = SubResource("StandardMaterial3D_xxal4")
 released_surface_texture = SubResource("StandardMaterial3D_dhbq6")
