@@ -8,6 +8,9 @@ class_name GameButton extends MeshInstance3D
 @export var released_texture: StandardMaterial3D = null;
 @export var disabled_texture: StandardMaterial3D = null;
 
+@onready var pressed_sfx: SFXData = load("res://src/resources/rune_pressed.tres")
+@onready var off_sfx: SFXData = load("res://src/resources/rune_released.tres")
+
 signal pressed();
 signal released();
 signal disabled();
@@ -40,8 +43,10 @@ func _on_trigger_body_entered(body):
 		is_pressed = !is_pressed
 		if is_pressed:
 			pressed.emit()
+			SFX.play_sfx(pressed_sfx)
 		else:
 			released.emit()
+			SFX.play_sfx(off_sfx)			
 
 		if disable_on_toggle:
 			is_disabled = true

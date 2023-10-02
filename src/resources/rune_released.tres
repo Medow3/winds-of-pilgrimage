@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="SFXData" load_steps=15 format=3 uid="uid://c7330y2wux1th"]
+
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="1_hv5vl"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data_weighted.gd" id="2_52bnh"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="3_3dib8"]
+[ext_resource type="AudioStream" uid="uid://by4u5wopnjlv5" path="res://assets/audio/sound_effects/RuneOff1.wav" id="4_32ph6"]
+[ext_resource type="AudioStream" uid="uid://cidptj4at7jp" path="res://assets/audio/sound_effects/RuneOff2.wav" id="5_fwdrr"]
+[ext_resource type="AudioStream" uid="uid://c13khqahendgl" path="res://assets/audio/sound_effects/RuneOff3.wav" id="6_fpjt2"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_pool_data.gd" id="7_c63fr"]
+
+[sub_resource type="Resource" id="Resource_fjwrl"]
+script = ExtResource("3_3dib8")
+sound_file = ExtResource("4_32ph6")
+pitch_scale = 1.0
+pitch_random = 0.01
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_0rjxl"]
+script = ExtResource("2_52bnh")
+sfx_data = SubResource("Resource_fjwrl")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_6k668"]
+script = ExtResource("3_3dib8")
+sound_file = ExtResource("5_fwdrr")
+pitch_scale = 1.0
+pitch_random = 0.01
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_ij6b1"]
+script = ExtResource("2_52bnh")
+sfx_data = SubResource("Resource_6k668")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_ohfkk"]
+script = ExtResource("3_3dib8")
+sound_file = ExtResource("6_fpjt2")
+pitch_scale = 1.0
+pitch_random = 0.01
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_o7aya"]
+script = ExtResource("2_52bnh")
+sfx_data = SubResource("Resource_ohfkk")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_p1i64"]
+script = ExtResource("7_c63fr")
+prevent_same_sound_twice_in_a_row = true
+SFX_pool = Array[ExtResource("2_52bnh")]([SubResource("Resource_0rjxl"), SubResource("Resource_ij6b1"), SubResource("Resource_o7aya")])
+
+[resource]
+script = ExtResource("1_hv5vl")
+sfx_pool = SubResource("Resource_p1i64")

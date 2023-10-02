@@ -1,6 +1,9 @@
 class_name Puzzle extends GridMap
 
 @export var progress_layer = -1
+@export var success_sfx: SFXData
+
+@onready var puzzle_sovle_sfx: SFXData = load("res://src/resources/puzzle_solve.tres")
 
 var tiles: Dictionary = {} 
 
@@ -47,6 +50,7 @@ func on_tile_update():
 	
 	if puzzle_correct:
 		success.emit(self)
+		SFX.play_sfx(puzzle_sovle_sfx)
 	else:
 		failure.emit(self)
 
