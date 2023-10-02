@@ -4,6 +4,6 @@
 
 [node name="Puzzle1" instance=ExtResource("1_gfq0c")]
 data = {
-"cells": PackedInt32Array(65535, 65534, 3, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 3)
+"cells": PackedInt32Array(65535, 65534, 3, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 3, 65534, 0, 9)
 }
 progress_layer = 0
