@@ -44,6 +44,8 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 		[start + Vector3i(0, 0, -1), start]
 	]
 	
+	print("AAAA")
+	
 	while !stack.is_empty():
 		var head = stack.pop_front();
 		var pos = head[0]
@@ -59,9 +61,14 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 		if !pos_tile.is_pressed:
 			continue
 			
+		print("ABBA")
+			
 		visited[pos] = last_pos;
 		if pos_tile is ConnectButton:
 			set_path(tiles, start, pos, visited)
+			$Line.visible = true
+			$Line.mesh = path;
+			print("ACCA")
 			return true
 			
 		if pos_tile.ignore_as_adjacent_tile:
@@ -72,13 +79,15 @@ func evaluate_in_puzzle(tiles: Dictionary, start: Vector3i):
 		stack.push_back([pos + Vector3i(0,  0,  1), pos])
 		stack.push_back([pos + Vector3i(0,  0, -1), pos])
 	
+	$Line.visible = false
 	return false
 
-func on_puzzle_success(_puzzle):
-	super.on_puzzle_success(_puzzle)
-	$Line.visible = true
-	$Line.mesh = path;
+func on_puzzle_success(puzzle):
+	super.on_puzzle_success(puzzle)
+#	$Line.visible = true
+#	$Line.mesh = path;
 	
-func on_puzzle_failure(_puzzle):
-	super.on_puzzle_failure(_puzzle)
-	$Line.visible = false
+	
+func on_puzzle_failure(puzzle):
+	super.on_puzzle_failure(puzzle)
+#	$Line.visible = false
