@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ndjkdx1o4c"]
+
+[ext_resource type="FontFile" uid="uid://dey1nm70rh0oo" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="1_edhij"]
+[ext_resource type="Script" path="res://src/ui/win.gd" id="1_kou2y"]
+
+[node name="win" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kou2y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.905882)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 22.0
+offset_right = 71.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_edhij")
+text = "You win!
+Thank you for playing!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 29.0
+offset_right = 4.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_edhij")
+text = "Continue"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
