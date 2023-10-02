@@ -1,10 +1,10 @@
 class_name AnimationHandler extends Node
 
-@export var animation_tree_node_names: Array
+@export var animation_tree_node_names: Array[String]
 @export var current_animation: String
 
-@onready var player: AnimationPlayer = $AnimationPlayer
-@onready var tree: AnimationTree = $AnimationTree
+@export var player: AnimationPlayer
+@export var tree: AnimationTree
 @onready var state_machine: AnimationNodeStateMachinePlayback = tree.get("parameters/playback")
 
 
