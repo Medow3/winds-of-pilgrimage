@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody3D
 
 @export var respawn_points_holder: Node
+@export var footstep_grass: SFXData
+@export var jump_sfx: SFXData
 
 @onready var camera_rotation_pivot_point = $camera_rotation_pivot_point
 @onready var rogue = $Rogue
@@ -54,3 +56,9 @@ func check_respawn():
 			Fade.fade_out_in(0.3)
 			global_position = closest_respawn_pos
 	
+
+func play_footstep():
+	SFX.play_sfx(footstep_grass)
+
+func play_jump():
+	SFX.play_sfx(jump_sfx)

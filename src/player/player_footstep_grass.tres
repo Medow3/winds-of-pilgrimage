@@ -1,0 +1,131 @@
+[gd_resource type="Resource" script_class="SFXData" load_steps=18 format=3 uid="uid://bos1x1ybs58jn"]
+
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="1_gmi2v"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data_weighted.gd" id="2_u1i2v"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="3_p2ph7"]
+[ext_resource type="AudioStream" uid="uid://b4evoicjoww2e" path="res://assets/audio/sound_effects/GrassStepBetter1.wav" id="4_1e4ci"]
+[ext_resource type="AudioStream" uid="uid://cnhr5xa7fcl66" path="res://assets/audio/sound_effects/GrassStepBetter2.wav" id="5_ofva6"]
+[ext_resource type="AudioStream" uid="uid://cafpp40b5gpgl" path="res://assets/audio/sound_effects/GrassStepBetter3.wav" id="6_qxmhv"]
+[ext_resource type="AudioStream" uid="uid://cutif4pjpvx2c" path="res://assets/audio/sound_effects/GrassStepBetter4.wav" id="7_ramiw"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_pool_data.gd" id="8_unsii"]
+
+[sub_resource type="Resource" id="Resource_ltxbd"]
+script = ExtResource("3_p2ph7")
+sound_file = ExtResource("4_1e4ci")
+pitch_scale = 1.0
+pitch_random = 0.02
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_x63l5"]
+script = ExtResource("2_u1i2v")
+sfx_data = SubResource("Resource_ltxbd")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_prf34"]
+script = ExtResource("3_p2ph7")
+sound_file = ExtResource("5_ofva6")
+pitch_scale = 1.0
+pitch_random = 0.02
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_5cs0g"]
+script = ExtResource("2_u1i2v")
+sfx_data = SubResource("Resource_prf34")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_tib2e"]
+script = ExtResource("3_p2ph7")
+sound_file = ExtResource("6_qxmhv")
+pitch_scale = 1.0
+pitch_random = 0.01
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_8u3hp"]
+script = ExtResource("2_u1i2v")
+sfx_data = SubResource("Resource_tib2e")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_0ii0v"]
+script = ExtResource("3_p2ph7")
+sound_file = ExtResource("7_ramiw")
+pitch_scale = 1.0
+pitch_random = 0.01
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_has7r"]
+script = ExtResource("2_u1i2v")
+sfx_data = SubResource("Resource_0ii0v")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_fhjwn"]
+script = ExtResource("8_unsii")
+prevent_same_sound_twice_in_a_row = true
+SFX_pool = Array[ExtResource("2_u1i2v")]([SubResource("Resource_x63l5"), SubResource("Resource_5cs0g"), SubResource("Resource_8u3hp"), SubResource("Resource_has7r")])
+
+[resource]
+script = ExtResource("1_gmi2v")
+sfx_pool = SubResource("Resource_fhjwn")

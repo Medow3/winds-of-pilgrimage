@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func open(puzzle: Puzzle):
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(self, "position", go_to_pos, 2).from_current()
+	tween.tween_property(self, "position", go_to_pos, 1).from_current()

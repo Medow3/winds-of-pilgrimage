@@ -1,11 +1,14 @@
 extends Node
 
 @export_dir var sound_fx_directory_path: String = "res://assets/audio/sound_effects/"
+@export var success_sfx: SFXData
+@export var fail_sfx: SFXData
 
 @onready var audio_players: Node = $audio_players
 @onready var audio_players_list: Array = audio_players.get_children()
 
 var _next_open_player_index: int = 0
+
 
 
 func play_sfx(sfx_data: SFXData) -> void:

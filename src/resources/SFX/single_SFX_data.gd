@@ -59,7 +59,7 @@ class_name SingleSFXData extends Resource
 # Make sure this is the name of the sound effects bus in the default_bus_layout.tres
 const SOUND_EFFECT_AUDIO_BUS_NAME: String = "Sound Effects"
 const EVIRONMENT_AUDIO_BUS_NAME: String = "Environment"
-const DEFAULT_SFX_VOLUME: float = -4.0
+const DEFAULT_SFX_VOLUME: float = -9.0
 const FADE_OFF_VALUE: float = -80.0
 
 var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
