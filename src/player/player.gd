@@ -1,9 +1,12 @@
 class_name Player extends CharacterBody3D
 
+@export var respawn_points_holder: Node
+
 @onready var camera_rotation_pivot_point = $camera_rotation_pivot_point
 
 const SPEED: float = 5.0
 const JUMP_VELOCITY: float = 3.5
+const DEATH_Y: float = -4.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -27,4 +30,14 @@ func _physics_process(delta: float):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
+	check_respawn()
+	
+func check_respawn():
+	if global_position.y < DEATH_Y:
+		var closest_respawn_pos: Vector3 = Vector3(0, 2, 0)
+		for i in respawn_points_holder.get_children():
+			if global_position.distance_to(i.global_position) < global_position.distance_to(closest_respawn_pos):
+				closest_respawn_pos = i.global_position
+			Fade.fade_out_in(0.3)
+			global_position = closest_respawn_pos
 	
