@@ -61,5 +61,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79178, 0, 0)
 [node name="Puzzle3" parent="SubViewport/main" instance=ExtResource("3_hivtv")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -1.45, 0)
 
+[node name="Puzzle3_2" parent="SubViewport/main" instance=ExtResource("3_hivtv")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.387, 7)
+
 [editable path="SubViewport/main/player"]
 [editable path="SubViewport/main/player/camera_rotation_pivot_point"]
