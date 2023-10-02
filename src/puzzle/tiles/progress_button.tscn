@@ -28,10 +28,9 @@ diffuse_mode = 3
 albedo_color = Color(1, 0.678431, 0.356863, 1)
 roughness = 0.08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmye0"]
-next_pass = SubResource("ShaderMaterial_ysyj3")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xm57w"]
+blend_mode = 1
 diffuse_mode = 3
-albedo_color = Color(1, 0.796078, 0.607843, 1)
 roughness = 0.08
 
 [sub_resource type="PlaceholderMesh" id="PlaceholderMesh_03acl"]
@@ -49,7 +48,7 @@ released_texture = SubResource("StandardMaterial3D_2gcw1")
 
 [node name="Line" type="MeshInstance3D" parent="." index="0"]
 visible = false
-material_override = SubResource("StandardMaterial3D_fmye0")
+material_override = SubResource("StandardMaterial3D_xm57w")
 cast_shadow = 0
 mesh = SubResource("PlaceholderMesh_03acl")
 

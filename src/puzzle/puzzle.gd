@@ -25,6 +25,7 @@ func _ready():
 	for cell in get_used_cells():
 		var world_cell = map_to_local(cell)
 		var item = get_cell_item(cell)
+		print(item)
 		var button: PuzzleButton = TILES[item].instantiate()
 		add_child(button)
 		button.position = world_cell
@@ -38,10 +39,14 @@ func _ready():
 		set_cell_item(cell, INVALID_CELL_ITEM)
 
 func on_tile_update():
+	var puzzle_correct = true
 	for cell in tiles.keys():
-		var tile: PuzzleButton = tiles[cell]
-		if !tile.evaluate_in_puzzle(tiles, cell):
-			failure.emit(self)
-			return;
-	success.emit(self)
+		print(cell)
+		var tile: PuzzleButton = tiles[cell] 
+		puzzle_correct = tile.evaluate_in_puzzle(tiles, cell) and puzzle_correct
+	
+	if puzzle_correct:
+		success.emit(self)
+	else:
+		failure.emit(self)
 
