@@ -65,7 +65,7 @@ transparency = 2
 alpha_scissor_threshold = 0.25
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
-albedo_color = Color(1, 0.678431, 0.356863, 1)
+albedo_color = Color(0.211765, 0.788235, 0.839216, 1)
 albedo_texture = ExtResource("4_vku4p")
 roughness = 0.08
 
